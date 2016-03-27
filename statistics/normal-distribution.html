@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hedge-o-Mat - your personal financial risk manager</title>
+    <title>Normal distribution</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Hedge-o-Mat helps you manage financial risks.">
-    <link rel="canonical" href="http://codiepp.github.io/Hedge-o-Mat/">
+    <link rel="canonical" href="http://codiepp.github.io/Hedge-o-Mat/statistics/normal-distribution.html">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -56,28 +56,54 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div class="home">
+      <div class="post">
 
-  <h1>Posts</h1>
+  <header class="post-header">
+    <h1>Normal distribution</h1>
+    <p class="meta">Mar 28, 2016</p>
+  </header>
 
-  <ul class="posts">
-    
-      <li>
-        <span class="post-date">Mar 28, 2016</span>
-        <a class="post-link" href="/statistics/normal-distribution.html">Normal distribution</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 26, 2016</span>
-        <a class="post-link" href="/jekyll/update/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+  <p>very commonly used distribution</p>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<script type="math/tex; mode=display">mean=\mu</script>
 
+<script type="math/tex; mode=display">variance=\sigma^2</script>
+
+<script type="math/tex; mode=display">pdf(x)=\frac{1}{\sqrt{2\pi}\sigma}\mbox{ } e^{-\frac{(x-\mu)^2}{2\sigma^2}}</script>
+
+<p>The variable <script type="math/tex">X \sim N(\mu, \sigma^2)</script> is said to be normally distributed with
+mean and variance as <script type="math/tex">\mu</script> and <script type="math/tex">\sigma^2</script>.
+All normally distributed variables can be compared to each other by
+transformation to the standard normal distribution:
+<script type="math/tex">Z = \frac{X - \mu}{\sigma}</script> where <script type="math/tex">Z \sim N(\mu, \sigma^2)</script>
+The number of standard deviations away from the mean translates to the
+probability <script type="math/tex">% <![CDATA[
+P(Z>z) = 5{\%} when z<=1.67 %]]></script> or <script type="math/tex">% <![CDATA[
+P(Z>z) = 1{\%} when z<=2.3 %]]></script></p>
+
+<p><img src="/images/npdf.png" alt="Normal probability distribution" /></p>
+
+<p>Code to reproduce this plot:</p>
+
+<div class="highlight"><pre><code class="language-octave" data-lang="octave"><span class="lineno">1 </span><span class="n">p</span><span class="p">=</span><span class="nb">normpdf</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="mf">0.2</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="lineno">2 </span><span class="nb">plot</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<span class="lineno">3 </span><span class="nb">title</span><span class="p">(</span><span class="s">&quot;Normal distribution&quot;</span><span class="p">);</span>
+<span class="lineno">4 </span><span class="n">xt2</span><span class="p">=[</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">32</span><span class="p">];</span>
+<span class="lineno">5 </span><span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XTick&#39;</span><span class="p">,</span><span class="n">xt2</span><span class="p">);</span>
+<span class="lineno">6 </span><span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XTicklabel&#39;</span><span class="p">,{</span><span class="s">&#39;-3.2&#39;</span><span class="p">,</span><span class="s">&#39;-1.6&#39;</span><span class="p">,</span><span class="s">&#39;0&#39;</span><span class="p">,</span><span class="s">&#39;1.6&#39;</span><span class="p">,</span><span class="s">&#39;3.2&#39;</span><span class="p">});</span>
+<span class="lineno">7 </span><span class="nb">print</span><span class="p">(</span><span class="s">&#39;npdf.ps&#39;</span><span class="p">,</span><span class="s">&#39;-dpsc2&#39;</span><span class="p">);</span></code></pre></div>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span> convert npdf.ps -trim -resize 70% npdf.png
+</pre></div>
+</div>
 </div>
 
+
+  </article>
+
+</div>
       </div>
     </div>
 
