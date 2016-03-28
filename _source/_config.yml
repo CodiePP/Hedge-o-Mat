@@ -20,7 +20,7 @@ lsi: true
 # permalink as /Hedge-o-Mat/:categories/:title.html
 permalink: none
 
-# Serving
+# Serving by 'jekyll serve -w'
 detach:  false
 port:    4000
 host:    127.0.0.1
