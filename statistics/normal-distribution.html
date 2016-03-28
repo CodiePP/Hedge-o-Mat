@@ -7,10 +7,10 @@
     <title>Normal distribution</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Hedge-o-Mat helps you manage financial risks.">
-    <link rel="canonical" href="http://codiepp.github.io/Hedge-o-Mat/statistics/normal-distribution.html">
+    <link rel="canonical" href="http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/normal-distribution.html">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/Hedge-o-Mat/css/main.css">
 
     <script type="text/javascript"
       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -24,7 +24,7 @@
 
   <div class="wrap">
 
-    <a class="site-title" href="/">Hedge-o-Mat - your personal financial risk manager</a>
+    <a class="site-title" href="/Hedge-o-Mat/">Hedge-o-Mat - on financial risk management</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -40,11 +40,13 @@
       </a>
       <div class="trigger">
         
-          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/Hedge-o-Mat/about/">About</a>
         
           
         
           
+        
+          <a class="page-link" href="/Hedge-o-Mat/license/">License</a>
         
       </div>
     </nav>
@@ -78,13 +80,11 @@ All normally distributed variables can be compared to each other by
 transformation to the standard normal distribution:
 <script type="math/tex">Z = \frac{X - \mu}{\sigma}</script> where <script type="math/tex">Z \sim N(\mu, \sigma^2)</script>
 The number of standard deviations away from the mean translates to the
-probability <script type="math/tex">% <![CDATA[
-P(Z>z) = 5{\%} when z<=1.67 %]]></script> or <script type="math/tex">% <![CDATA[
-P(Z>z) = 1{\%} when z<=2.3 %]]></script></p>
+probability <script type="math/tex">P(Z{>}z) = 5{\%}</script>  when <script type="math/tex">z=1.67</script> or <script type="math/tex">P(Z{>}z) = 1{\%}</script> when <script type="math/tex">z=2.3</script></p>
 
 <p><img src="/images/npdf.png" alt="Normal probability distribution" /></p>
 
-<p>Code to reproduce this plot:</p>
+<p>Code to reproduce this plot in <code>octave</code>:</p>
 
 <div class="highlight"><pre><code class="language-octave" data-lang="octave"><span class="lineno">1 </span><span class="n">p</span><span class="p">=</span><span class="nb">normpdf</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="mf">0.2</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 <span class="lineno">2 </span><span class="nb">plot</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
@@ -92,13 +92,8 @@ P(Z>z) = 1{\%} when z<=2.3 %]]></script></p>
 <span class="lineno">4 </span><span class="n">xt2</span><span class="p">=[</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">32</span><span class="p">];</span>
 <span class="lineno">5 </span><span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XTick&#39;</span><span class="p">,</span><span class="n">xt2</span><span class="p">);</span>
 <span class="lineno">6 </span><span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XTicklabel&#39;</span><span class="p">,{</span><span class="s">&#39;-3.2&#39;</span><span class="p">,</span><span class="s">&#39;-1.6&#39;</span><span class="p">,</span><span class="s">&#39;0&#39;</span><span class="p">,</span><span class="s">&#39;1.6&#39;</span><span class="p">,</span><span class="s">&#39;3.2&#39;</span><span class="p">});</span>
-<span class="lineno">7 </span><span class="nb">print</span><span class="p">(</span><span class="s">&#39;npdf.ps&#39;</span><span class="p">,</span><span class="s">&#39;-dpsc2&#39;</span><span class="p">);</span></code></pre></div>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span> convert npdf.ps -trim -resize 70% npdf.png
-</pre></div>
-</div>
-</div>
+<span class="lineno">7 </span><span class="nb">print</span><span class="p">(</span><span class="s">&#39;npdf.ps&#39;</span><span class="p">,</span><span class="s">&#39;-dpsc2&#39;</span><span class="p">);</span>
+<span class="lineno">8 </span><span class="c"># convert npdf.ps -trim -resize 70% npdf.png</span></code></pre></div>
 
 
   </article>
@@ -111,12 +106,12 @@ P(Z>z) = 1{\%} when z<=2.3 %]]></script></p>
 
   <div class="wrap">
 
-    <h2 class="footer-heading">Hedge-o-Mat - your personal financial risk manager</h2>
+    <h2 class="footer-heading">Hedge-o-Mat - on financial risk management</h2>
 
     <div class="footer-col-1 column">
       <ul>
-        <li>Hedge-o-Mat - your personal financial risk manager</li>
-        <li><a href="mailto:hedge-o-mat AT apax .net">hedge-o-mat AT apax .net</a></li>
+        <li>Hedge-o-Mat - on financial risk management</li>
+        <li><a href="mailto:"></a></li>
       </ul>
     </div>
 
