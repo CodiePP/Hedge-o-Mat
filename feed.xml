@@ -5,45 +5,18 @@
     <description>Hedge-o-Mat helps you manage financial risks.</description>
     <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/</link>
     <atom:link href="http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 28 Mar 2016 22:31:14 +0200</pubDate>
-    <lastBuildDate>Mon, 28 Mar 2016 22:31:14 +0200</lastBuildDate>
+    <pubDate>Tue, 29 Mar 2016 00:09:23 +0200</pubDate>
+    <lastBuildDate>Tue, 29 Mar 2016 00:09:23 +0200</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
-        <title>Normal distribution</title>
-        <description>&lt;p&gt;very commonly used distribution&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;mean=\mu&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;variance=\sigma^2&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;pdf(x)=\frac{1}{\sqrt{2\pi}\sigma}\mbox{ } e^{-\frac{(x-\mu)^2}{2\sigma^2}}&lt;/script&gt;
-
-&lt;p&gt;The variable &lt;script type=&quot;math/tex&quot;&gt;X \sim N(\mu, \sigma^2)&lt;/script&gt; is said to be normally distributed with
-mean and variance as &lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\sigma^2&lt;/script&gt;.
-All normally distributed variables can be compared to each other by
-transformation to the standard normal distribution:
-&lt;script type=&quot;math/tex&quot;&gt;Z = \frac{X - \mu}{\sigma}&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;Z \sim N(\mu, \sigma^2)&lt;/script&gt;
-The number of standard deviations away from the mean translates to the
-probability &lt;script type=&quot;math/tex&quot;&gt;P(Z{&gt;}z) = 5{\%}&lt;/script&gt;  when &lt;script type=&quot;math/tex&quot;&gt;z=1.67&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;P(Z{&gt;}z) = 1{\%}&lt;/script&gt; when &lt;script type=&quot;math/tex&quot;&gt;z=2.3&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/npdf.png&quot; alt=&quot;Normal probability distribution&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Code to reproduce this plot in &lt;code&gt;octave&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-octave&quot; data-lang=&quot;octave&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;normpdf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt;2 &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt;3 &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Normal distribution&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt;4 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xt2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt;5 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;gca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;XTick&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xt2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt;6 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;gca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;XTicklabel&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;-3.2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;-1.6&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;1.6&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;3.2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt;7 &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;npdf.ps&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;-dpsc2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt;8 &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# convert npdf.ps -trim -resize 70% npdf.png&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        <title>White&#39;s test</title>
+        <description>&lt;p&gt;Similar to the &lt;a href=&quot;breusch-pagan-test.html&quot;&gt;Breusch-Pagan test&lt;/a&gt; this tests for &lt;code&gt;homoscedasticity&lt;/code&gt;, i.e. constant variance of the residuals in a regression test.&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 28 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/normal-distribution.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/normal-distribution.html</guid>
+        <pubDate>Tue, 29 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/white-test.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/white-test.html</guid>
         
         
         <category>statistics</category>
@@ -51,24 +24,214 @@ probability &lt;script type=&quot;math/tex&quot;&gt;P(Z{&gt;}z) = 5{\%}&lt;/scri
       </item>
     
       <item>
-        <title>Welcome to Hedge-o-Mat!</title>
-        <description>&lt;p&gt;While studying financial risk management I felt the need to collect the
-knowledge floating on the Internet and submerged in books.&lt;/p&gt;
+        <title>Student&#39;s t distribution</title>
+        <description>&lt;script type=&quot;math/tex; mode=display&quot;&gt;mean=\mu&lt;/script&gt;
 
-&lt;p&gt;Moreover, I also collect some spreadsheets or &lt;code&gt;octave&lt;/code&gt; / &lt;code&gt;R&lt;/code&gt; code, which 
-may freely be reused under the open source &lt;a href=&quot;license&quot;&gt;MIT license&lt;/a&gt;.&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;variance=(\frac{c}{c-2})\sigma^2&lt;/script&gt;
 
-&lt;p&gt;The name should suggest that we can still hope to find methods and computer
-algorithms that will automatically mitigate risks.&lt;/p&gt;
+&lt;p&gt;parameter c is degrees of freedom. The variance approaches the one of the normal distribution for large c.&lt;/p&gt;
 
-&lt;p&gt;I am interested to hear your comments and advices. Contact me via &lt;a href=&quot;https://twitter.com/CodiePlusPlus&quot;&gt;Twitter&lt;/a&gt; or
-open an issue on &lt;a href=&quot;https://github.com/CodiePP/Hedge-o-Mat/issues&quot;&gt;GitHub&lt;/a&gt;, please.&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;t=\frac{\bar{X}-\mu}{S_X/\sqrt{n}}&lt;/script&gt;
+
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;{S_X}^2 = \frac{1}{n-1}\sum{(X_i-\bar{X})^2}&lt;/script&gt; is the standard deviation of the sample.&lt;/p&gt;
+
+&lt;p&gt;Given some precalculated values from &lt;a href=&quot;http://en.wikipedia.org/wiki/Student%27s_t-distribution&quot;&gt;Wikipedia&lt;/a&gt; statistics tables, we can find the associated probability.&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 26 Mar 2016 23:44:01 +0100</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/welcome-to-Hedge-o-Mat.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/welcome-to-Hedge-o-Mat.html</guid>
+        <pubDate>Tue, 29 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/students-t-distribution.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/students-t-distribution.html</guid>
         
+        
+        <category>statistics</category>
+        
+      </item>
+    
+      <item>
+        <title>Skewness</title>
+        <description>&lt;p&gt;third momentum of returns:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;t = x - mean(x)&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;m = mean(t ^ 3)&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;s = mean(t ^ 2)&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;skewness = \frac{m}{s^{\frac{3}{2}}}&lt;/script&gt;
+
+&lt;p&gt;positive skewness indicates a &lt;code&gt;right tail&lt;/code&gt; and the mass of the data on the left (&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+&lt; \mu %]]&gt;&lt;/script&gt;);&lt;/p&gt;
+
+&lt;p&gt;negative skewness indicates a &lt;code&gt;left tail&lt;/code&gt; and the mass of the data on the right (&lt;script type=&quot;math/tex&quot;&gt;&gt; \mu&lt;/script&gt;).&lt;/p&gt;
+</description>
+        <pubDate>Tue, 29 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/skewness.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/skewness.html</guid>
+        
+        
+        <category>statistics</category>
+        
+      </item>
+    
+      <item>
+        <title>Kurtosis</title>
+        <description>&lt;p&gt;fourth momentum of returns:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;t = x - mean(x)&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;m = mean(t ^ 4)&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;s = mean(t ^ 2)&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;kurtosis = \frac{m}{s^2}&lt;/script&gt;
+
+&lt;p&gt;A normal distribution has a kurtosis of 3.&lt;/p&gt;
+
+&lt;p&gt;If kurtosis &amp;lt; 3 then the distribution is &lt;code&gt;platykurtic&lt;/code&gt; (looks flatter than normal distr., more mass in the centre, has smaller tails),&lt;/p&gt;
+
+&lt;p&gt;if kurtosis &amp;gt; 3 then the disitribution is said to be &lt;code&gt;leptokurtic&lt;/code&gt; (more peaked than normal distr. and larger tails!).&lt;/p&gt;
+</description>
+        <pubDate>Tue, 29 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/kurtosis.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/kurtosis.html</guid>
+        
+        
+        <category>statistics</category>
+        
+      </item>
+    
+      <item>
+        <title>Jarque-Bera test (JB)</title>
+        <description>&lt;p&gt;Tests whether a distribution of a random variable follows the normal distribution. Thus, whether its third and fourth moments, the &lt;a href=&quot;skewness.html&quot;&gt;skewness&lt;/a&gt; and &lt;a href=&quot;kurtosis.html&quot;&gt;kurtosis&lt;/a&gt;, are equal to the values of a normal distribution: skewness = 0, kurtosis = 3.&lt;/p&gt;
+
+&lt;p&gt;Using the error term (&lt;script type=&quot;math/tex&quot;&gt;\hat{u}&lt;/script&gt;) of an OLS regression one can estimate these two parameters:&lt;/p&gt;
+
+&lt;p&gt;Skewness: &lt;script type=&quot;math/tex&quot;&gt;b1 = \frac{E[u^3]}{(\sigma^2)^{3/2}}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Kurtosis: &lt;script type=&quot;math/tex&quot;&gt;b2 = \frac{E[u^4]}{(\sigma^2)^{2}}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Test statistics:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;W = T[\frac{b_1^2}{6} + \frac{(b_2 - 3)^2}{24}]&lt;/script&gt;
+
+&lt;p&gt;where T is the sample size.&lt;/p&gt;
+
+&lt;p&gt;This test statistics follows a Chi&lt;sup&gt;2&lt;/sup&gt; distribution with two degrees of freedom Χ&lt;sup&gt;2&lt;/sup&gt;(2).&lt;/p&gt;
+</description>
+        <pubDate>Tue, 29 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/jarque-bera-test.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/jarque-bera-test.html</guid>
+        
+        
+        <category>statistics</category>
+        
+      </item>
+    
+      <item>
+        <title>Goldfield-Quandt test</title>
+        <description>&lt;p&gt;Tests for normal distribution.&lt;/p&gt;
+
+&lt;p&gt;TODO :exclamation:&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 29 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/goldfield-quandt-test.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/goldfield-quandt-test.html</guid>
+        
+        
+        <category>statistics</category>
+        
+      </item>
+    
+      <item>
+        <title>Generalized Pareto distribution (GPD)</title>
+        <description>&lt;script type=&quot;math/tex; mode=display&quot;&gt;gpd(x) = 1 - (1+\frac{\xi X}{\beta})^{\frac{-1}{\xi}}&lt;/script&gt;
+
+&lt;p&gt;note its similarity to the &lt;a href=&quot;generalized-extreme-value-distribution.html&quot;&gt;GEV&lt;/a&gt;(generalized extreme value distribution).&lt;/p&gt;
+
+&lt;p&gt;with &lt;script type=&quot;math/tex&quot;&gt;\xi &gt; 0&lt;/script&gt; this distribution also shows significant &lt;strong&gt;fat tails&lt;/strong&gt;. &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; is a scaling factor.&lt;/p&gt;
+
+&lt;p&gt;This distribution was derived using the peaks-over-threshold method: the conditional probability of a loss above a defined threshold.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 29 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/generalized-pareto-distribution.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/generalized-pareto-distribution.html</guid>
+        
+        
+        <category>statistics</category>
+        
+      </item>
+    
+      <item>
+        <title>Generalized Extreme Value distribution (GEV)</title>
+        <description>&lt;script type=&quot;math/tex; mode=display&quot;&gt;gev(x) = exp(-(1+\frac{\xi(x-\mu)}{\sigma})^{\frac{-1}{\xi}})&lt;/script&gt;
+
+&lt;p&gt;This distribution can be derived using the block maxima method: all observations x&lt;sub&gt;i&lt;/sub&gt; are divided in equally spaced blocks. Then, we note the local maxima in each block. After normalization these maxima follow the GEV.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\xi = 0&lt;/script&gt; : Gumbel distribution&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\xi &lt; 0 %]]&gt;&lt;/script&gt; : Weibull distribution&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\xi &gt; 0&lt;/script&gt; : Fréchet distribution&lt;/p&gt;
+
+&lt;p&gt;The Fréchet distribution shows significant &lt;strong&gt;fat tails&lt;/strong&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 29 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/generalized-extreme-value-distribution.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/generalized-extreme-value-distribution.html</guid>
+        
+        
+        <category>statistics</category>
+        
+      </item>
+    
+      <item>
+        <title>Durbin-Watson test</title>
+        <description>&lt;p&gt;Tests for first order &lt;code&gt;autocorrelation&lt;/code&gt;, i.e. between the value &lt;script type=&quot;math/tex&quot;&gt;u_t&lt;/script&gt; and the previous value &lt;script type=&quot;math/tex&quot;&gt;u_{t-1}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;DW = \frac{ \Sigma_{t=2}^{T} (\hat{u}_t - \hat{u}_{t-1})^2} {\Sigma_{t=2}^{T} \hat{u}_t^2}&lt;/script&gt;
+
+&lt;p&gt;The DW test can take values between 0 and 4.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;0&lt;/strong&gt;: positive autocorrelation&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2&lt;/strong&gt;: no autocorrelation&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4&lt;/strong&gt;: negative autocorrelation&lt;/p&gt;
+
+&lt;p&gt;So values near 2 indicate that the series does not exhibit autocorrelation.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 29 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/durbin-watson-test.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/durbin-watson-test.html</guid>
+        
+        
+        <category>statistics</category>
+        
+      </item>
+    
+      <item>
+        <title>Coherent risk measure</title>
+        <description>&lt;p&gt;A coherent risk measure satifies the following features:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sub-additivity: ρ(R&lt;sub&gt;1&lt;/sub&gt; + R&lt;sub&gt;2&lt;/sub&gt;) ≤ ρ(R&lt;sub&gt;1&lt;/sub&gt;) + ρ(R&lt;sub&gt;2&lt;/sub&gt;)&lt;/li&gt;
+  &lt;li&gt;monotonicity: ρ(R&lt;sub&gt;1&lt;/sub&gt;) ≥ ρ(R&lt;sub&gt;2&lt;/sub&gt;) if R&lt;sub&gt;1&lt;/sub&gt; ≥ R&lt;sub&gt;2&lt;/sub&gt;&lt;/li&gt;
+  &lt;li&gt;positive homogeneity: βρ(R) = ρ(βR), for all β&amp;gt;0.&lt;/li&gt;
+  &lt;li&gt;translation invariant: ρ(R) + c = ρ(c + R) for all constants c.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Beware! the &lt;a href=&quot;../methods/VAR&quot;&gt;VAR&lt;/a&gt; measure violates the first feature (sub-additivity).&lt;/p&gt;
+</description>
+        <pubDate>Tue, 29 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/coherent-risk-measure.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/coherent-risk-measure.html</guid>
+        
+        
+        <category>statistics</category>
         
       </item>
     

@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hedge-o-Mat - on financial risk management</title>
+    <title>Jarque-Bera test (JB)</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Hedge-o-Mat helps you manage financial risks.">
-    <link rel="canonical" href="http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/">
+    <link rel="canonical" href="http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/jarque-bera-test.html">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/Hedge-o-Mat/css/main.css">
@@ -58,83 +58,33 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div class="home">
+      <div class="post">
 
-  <h1>Posts</h1>
+  <header class="post-header">
+    <h1>Jarque-Bera test (JB)</h1>
+    <p class="meta">Mar 29, 2016</p>
+  </header>
 
-  <ul class="posts">
-    
-      <li>
-        <span class="post-date">Mar 29, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/statistics/white-test.html">White's test</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 29, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/statistics/students-t-distribution.html">Student's t distribution</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 29, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/statistics/skewness.html">Skewness</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 29, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/statistics/kurtosis.html">Kurtosis</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 29, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/statistics/jarque-bera-test.html">Jarque-Bera test (JB)</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 29, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/statistics/goldfield-quandt-test.html">Goldfield-Quandt test</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 29, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/statistics/generalized-pareto-distribution.html">Generalized Pareto distribution (GPD)</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 29, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/statistics/generalized-extreme-value-distribution.html">Generalized Extreme Value distribution (GEV)</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 29, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/statistics/durbin-watson-test.html">Durbin-Watson test</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 29, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/statistics/coherent-risk-measure.html">Coherent risk measure</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 29, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/statistics/breusch-pagan-test.html">Breusch-Pagan test</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 28, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/statistics/normal-distribution.html">Normal distribution</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Mar 26, 2016</span>
-        <a class="post-link" href="/Hedge-o-Mat/welcome-to-Hedge-o-Mat.html">Welcome to Hedge-o-Mat!</a>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+  <p>Tests whether a distribution of a random variable follows the normal distribution. Thus, whether its third and fourth moments, the <a href="skewness.html">skewness</a> and <a href="kurtosis.html">kurtosis</a>, are equal to the values of a normal distribution: skewness = 0, kurtosis = 3.</p>
 
-  <p class="rss-subscribe">subscribe <a href="/Hedge-o-Mat/feed.xml">via RSS</a></p>
+<p>Using the error term (<script type="math/tex">\hat{u}</script>) of an OLS regression one can estimate these two parameters:</p>
+
+<p>Skewness: <script type="math/tex">b1 = \frac{E[u^3]}{(\sigma^2)^{3/2}}</script></p>
+
+<p>Kurtosis: <script type="math/tex">b2 = \frac{E[u^4]}{(\sigma^2)^{2}}</script></p>
+
+<p>Test statistics:</p>
+
+<script type="math/tex; mode=display">W = T[\frac{b_1^2}{6} + \frac{(b_2 - 3)^2}{24}]</script>
+
+<p>where T is the sample size.</p>
+
+<p>This test statistics follows a Chi<sup>2</sup> distribution with two degrees of freedom Χ<sup>2</sup>(2).</p>
+
+  </article>
 
 </div>
-
       </div>
     </div>
 
