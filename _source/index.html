@@ -1,8 +1,20 @@
 ---
 layout: default
+catlist: 
+ - statistics
+ - methods
+ - measure
 ---
 
-<div class="home">
+<div class="w3-main" style="margin-left:0px">
+
+  <h1>Categories</h1>
+
+  <p>
+  {% for cat in page.catlist %}
+  <a class="post-link" href="{{ site.baseurl }}/{{ cat }}.html">{{ cat }}</a>  
+  {% endfor %}
+  </p>
 
   <h1>Posts</h1>
 
@@ -11,6 +23,10 @@ layout: default
       <li>
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        {% for cat in post.categories %}
+        <span class="post-date"><a class="cat-link" href="{{ site.baseurl }}/{{
+            cat }}.html">{{ cat }}</span>  
+        {% endfor %}
       </li>
     {% endfor %}
   </ul>
@@ -18,3 +34,4 @@ layout: default
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
+

@@ -21,7 +21,7 @@ $$ Z = \frac{X - \mu}{\sigma} $$ where $$ Z \sim N(\mu, \sigma^2) $$
 The number of standard deviations away from the mean translates to the
 probability $$P(Z{>}z) = 5{\%}$$  when $$z=1.67$$ or $$P(Z{>}z) = 1{\%}$$ when $$z=2.3$$
 
-![Normal probability distribution](/images/npdf.png)
+![Normal probability distribution](../images/npdf.png)
 
 Code to reproduce this plot in `octave`:
 
