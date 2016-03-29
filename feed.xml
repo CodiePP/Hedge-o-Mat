@@ -5,9 +5,86 @@
     <description>understanding and managing financial risks.</description>
     <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/</link>
     <atom:link href="http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 30 Mar 2016 00:00:01 +0200</pubDate>
-    <lastBuildDate>Wed, 30 Mar 2016 00:00:01 +0200</lastBuildDate>
+    <pubDate>Wed, 30 Mar 2016 01:05:33 +0200</pubDate>
+    <lastBuildDate>Wed, 30 Mar 2016 01:05:33 +0200</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Volatility smile</title>
+        <description>&lt;p&gt;see chapter 18 in &lt;a title=&quot;Hull: Options, Futures and other Derivatives&quot; href=&quot;../books/hull-options-futures-and-other-derivatives.html&quot;&gt;Hull, Options,
+Futures, and other Derivatives&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Given that the &lt;a href=&quot;put-call-parity.html&quot;&gt;Call-Put-Parity&lt;/a&gt; holds, all 
+&lt;a href=&quot;../instruments/option.html&quot;&gt;options&lt;/a&gt;, whether calls or puts,
+should be of the same price. As price we mean the implied volatility of the
+option if we solve the Black-Scholes-Merton formula for the volatility parameter
+given all other parameters (interest rate, time to maturity, market price, ..)
+known. This volatility is implied by the prices of the options and therefore
+called &lt;code&gt;implied volatility&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Under the non-arbitrage argument the prices of puts and calls should be the
+same. However, as we compare market prices of such options and solve the BSM
+formula for the implied volatility we observe significant deviation from zero
+difference.&lt;/p&gt;
+
+&lt;p&gt;TODO: [ here follows a picture ]&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Smile&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;One argument for the SMILE is that the &lt;a href=&quot;black-scholes-merton.html&quot;&gt;Black-Scholes-Merton formula&lt;/a&gt;
+implies a static volatility whereas in real world this is certainly to move
+every day. Another argument is that the BSM formula depends on lognormal
+distributed returns whereas real world options’ returns deviate from this
+distribution. Empirically it has been shown that the lognormal distribution
+underestimates the heavy tails and thus the occurrence of rare events. This
+would enable an arbitrageur to collect a premium if she would buy deep out of
+the money put and call options as these are priced too cheap. On the rare event
+it will pay off.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Smirk&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The implied volatilities of puts and calls having the same degree of moneyness
+can also deviate. In this situation we call the volatility smile a smirk as it
+is left skewed.&lt;/p&gt;
+
+&lt;p&gt;[ here follows a picture ]&lt;/p&gt;
+
+&lt;p&gt;Reasons for this can be that shorting of the underlying instrument can be more
+expensive or simply, investors afford more to protect the downside risk.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Volatility Surface&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We can draw the implied volatility against moneyness (i.e. &lt;script type=&quot;math/tex&quot;&gt;K/S&lt;/script&gt;) and time
+to maturity.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-octave&quot; data-lang=&quot;octave&quot;&gt;&lt;span class=&quot;n&quot;&gt;ivsurf&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;14.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;12.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;14.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;12.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;14.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;12.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;14.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;15.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;15.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;14.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;15.0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;surf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ivsurf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;gca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;XTickLabel&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.95&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.05&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;gca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;YTickLabel&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;1m&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;3m&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;6m&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;1y&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;2y&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;5y&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;gca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;view&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;48&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;volasurf_ch18.ps&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;-dpsc2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;../images/volasurf_ch18.png&quot; alt=&quot;Volatility surface&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From a set of priced options (both puts and calls) we can derive their implied
+volatilities. Using some interpolation on the grid of moneyness, time to
+maturity we calculate the surface of expected implied volatilities.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/volatility-smile.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/volatility-smile.html</guid>
+        
+        
+        <category>methods</category>
+        
+      </item>
     
       <item>
         <title>Variance</title>
@@ -31,6 +108,87 @@ mean values.&lt;/p&gt;
         
         
         <category>statistics</category>
+        
+      </item>
+    
+      <item>
+        <title>Value at risk (VAR)</title>
+        <description>&lt;p&gt;Value at risk measures the maximal loss at a certain significance level over a
+certain time span. Often this figure is indicated in absolute values of total
+assets, but a percentage value is also seen.&lt;/p&gt;
+
+&lt;p&gt;The significance level (or 1 - confidence level) depends on our attitude towards
+risk. The more risk we can bear, the higher this value. The Basel II accord
+demands banks to calculate VAR at the 1% significance level (i.e. 99% confidence
+level).&lt;/p&gt;
+
+&lt;p&gt;The time span or risk horizon should match our exposure to the assets in trading
+days. The Basel II accord demands banks to calculate VAR for a 10 days horizon.
+The more liquid an investment the shorter the risk horizon and vice versa. For
+extremely liquid positions like major currency pairs, VAR is calculated
+intra-day.&lt;/p&gt;
+
+&lt;p&gt;Good coverage of this subject in these books: &lt;a title=&quot;Jorion: Value at Risk&quot; href=&quot;../books/jorion-value-at-risk.html&quot;&gt;Jorion, Value at Risk&lt;/a&gt; and &lt;a title=&quot;Alexander: Market Risk Analysis IV, Value-at-Risk Models&quot; href=&quot;../books/alexander-market-risk-analysis-iv-value-at-risk-models.html&quot;&gt;Alexander,
+Value-at-Risk Models&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/var.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/var.html</guid>
+        
+        
+        <category>methods</category>
+        
+      </item>
+    
+      <item>
+        <title>Tracking error</title>
+        <description>&lt;p&gt;The tracking error of a portfolio is defined as the annualized standard
+deviation of its excess returns over a benchmark.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\alpha =( r_{Pf} - r_{Bm})&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;TE = sqrt{\sum{(\alpha_i - \bar{\alpha})^2}}&lt;/script&gt;
+
+</description>
+        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/tracking-error.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/tracking-error.html</guid>
+        
+        
+        <category>methods</category>
+        
+      </item>
+    
+      <item>
+        <title>Sharpe ratio</title>
+        <description>&lt;p&gt;The Sharpe ratio indicates the excess return of a portfolio over its risk.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{r_P-r_f}{\sigma_P}&lt;/script&gt;
+
+</description>
+        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/sharpe-ratio.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/sharpe-ratio.html</guid>
+        
+        
+        <category>methods</category>
+        
+      </item>
+    
+      <item>
+        <title>Saving time</title>
+        <description>&lt;p&gt;How long does it take to reach a target value when you have X start capital and
+earn interest.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{log(V2/V1)}{log(1+r)}&lt;/script&gt;
+
+</description>
+        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/saving-time.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/saving-time.html</guid>
+        
+        
+        <category>methods</category>
         
       </item>
     
@@ -228,153 +386,20 @@ observations):
       </item>
     
       <item>
-        <title>Probability</title>
-        <description>&lt;p&gt;From the observation of a number of events &lt;script type=&quot;math/tex&quot;&gt;X_i&lt;/script&gt; of the same type, we can
-conclude that such an event may occur with probability&lt;/p&gt;
+        <title>Put-call parity</title>
+        <description>&lt;p&gt;For European calls and puts their prices are related by the Put-call parity:&lt;/p&gt;
 
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;P(X) = \frac{1}{N}\sum_i X_i&lt;/script&gt;.&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p + S_0e^{-qT} = c + Ke^{-rT}&lt;/script&gt;
 
-&lt;p&gt;A population of random events can be modeled using the &lt;a href=&quot;normal-distribution.html&quot;&gt;normal
-distribution&lt;/a&gt;:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;X_i = N(\mu, { }\sigma^2)&lt;/script&gt;
-
-&lt;p&gt;The number follows the distribution with mean μ and standard deviation σ
-(σ&lt;sup&gt;2&lt;/sup&gt; is the variance).&lt;/p&gt;
-
-&lt;p&gt;If we have previously derived this distribution for a type of random variable,
-we can evaluate the fit of every next instance of the variable to the
-distribution:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Z_i = \frac{X_i - \mu}{\sigma^2}&lt;/script&gt;
-
-&lt;p&gt;The Z-value measures how many standard deviations the value X&lt;sub&gt;i&lt;/sub&gt;
-deviates from the mean. The larger the Z-value the less likely does the value
-X&lt;sub&gt;i&lt;/sub&gt; follow this normal distribution, thus &lt;script type=&quot;math/tex&quot;&gt;X_i \sim N(\mu, {
-  }\sigma^2)&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;TODO: include &lt;code&gt;calculator&lt;/code&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/probability.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/probability.html</guid>
-        
-        
-        <category>statistics</category>
-        
-      </item>
-    
-      <item>
-        <title>Poisson distribution</title>
-        <description>&lt;p&gt;The distribution of single events within a time frame.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;mean = a&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;variance = a&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;pdf(x)=\frac{e^{-a}\mbox{ }a^x}{x!}, x=0, 1, 2, 3, \cdots&lt;/script&gt;
-
-&lt;p&gt;with parameter: &lt;script type=&quot;math/tex&quot;&gt;a&gt;0&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; are the prices of the put, call options and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is the
+current spot price of the underlying, &lt;script type=&quot;math/tex&quot;&gt;K&lt;/script&gt; the strike price, &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; the time to
+maturity. The interest rate is integrated with &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; denotes the
+dividend yield on the stock.&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/poisson-distribution.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/poisson-distribution.html</guid>
-        
-        
-        <category>statistics</category>
-        
-      </item>
-    
-      <item>
-        <title>Lognormal distribution</title>
-        <description>&lt;script type=&quot;math/tex; mode=display&quot;&gt;mean=e^{a+0.5b^2}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;variance=e^{2a+b^2}*(e^{b^2}-1)&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;pdf(x) = \frac{1}{\sqrt{2\pi}bx} \exp{(-\frac{1}{2b^2}*{(ln(x)-a)}^2)}&lt;/script&gt;
-
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;x&gt;=0&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Two parameters: &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt;, location; &lt;script type=&quot;math/tex&quot;&gt;b &gt; 0&lt;/script&gt; its scale.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../images/lnpdf.png&quot; alt=&quot;Lognormal probability distribution&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Code to reproduce this plot in &lt;code&gt;octave&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-octave&quot; data-lang=&quot;octave&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;lognpdf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 2 &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 3 &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 4 &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Log normal probability distribution&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 5 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 6 &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;xl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num2str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 7 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 8 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 9 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;gca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;XTicklabel&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt;10 &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;lnpdf.ps&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;-dpsc2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt;11 &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# convert lnpdf.ps -trim -resize 70% lnpdf.png&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/lognormal-distribution.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/lognormal-distribution.html</guid>
-        
-        
-        <category>statistics</category>
-        
-      </item>
-    
-      <item>
-        <title>Covariance</title>
-        <description>&lt;p&gt;Measures the variance of two data series around their mean values.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Covar(X,Y)=\frac{1}{N}\sum_i{(X_i-\bar{X})(Y_i-\bar{Y})}&lt;/script&gt;
-
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\bar{X}=\frac{1}{N}*\sum_i{X_i}&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;The covariance can be computed incrementally:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Covar(X)=\bar{X*Y} - (\bar{X}*\bar{Y})&lt;/script&gt;
-
-&lt;p&gt;Thus, we sum all &lt;script type=&quot;math/tex&quot;&gt;X_i&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;Y_i&lt;/script&gt; and all products &lt;script type=&quot;math/tex&quot;&gt;X_i*Y_i&lt;/script&gt;, then build the
-difference of their mean values.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/covariance.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/covariance.html</guid>
-        
-        
-        <category>statistics</category>
-        
-      </item>
-    
-      <item>
-        <title>Cash flow at risk (CFAR)</title>
-        <description>&lt;p&gt;Companies that are part of the “real” economy can barely assess their risk of
-business activities with the &lt;a href=&quot;var.html&quot;&gt;VAR&lt;/a&gt; approach. They would rather want to know the
-shortfall of their expected cash flows.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;CVAR = \alpha  \sigma_{CF}&lt;/script&gt;
-
-&lt;p&gt;Example: we expect cash flows of $10m over the next year, their volatility is
-$3m.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;CVAR_{5%} = 1.65 * $3m = $4.95m&lt;/script&gt;
-
-&lt;p&gt;Thus, there is a 5% chance that cash flows fall below $5.05m (10-4.95) in the
-next year.&lt;/p&gt;
-
-&lt;p&gt;Assumptions:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;cash flows are normally distributed&lt;/li&gt;
-&lt;li&gt;we know their volatility&lt;/li&gt;
-&lt;li&gt;this volatility is constant for the period in question&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/cash-flow-at-risk.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/cash-flow-at-risk.html</guid>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/put-call-parity.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/put-call-parity.html</guid>
         
         
         <category>methods</category>
@@ -382,40 +407,21 @@ next year.&lt;/p&gt;
       </item>
     
       <item>
-        <title>White&#39;s test</title>
-        <description>&lt;p&gt;Similar to the &lt;a href=&quot;breusch-pagan-test.html&quot;&gt;Breusch-Pagan test&lt;/a&gt; this tests for &lt;code&gt;homoscedasticity&lt;/code&gt;, i.e. constant variance of the residuals in a regression test.&lt;/p&gt;
+        <title>Protective put</title>
+        <description>&lt;p&gt;Buy a &lt;a href=&quot;../instruments/put.html&quot;&gt;put&lt;/a&gt; option to protect
+a portfolio from downside risk. You lose at most the premium paid for the put
+option, but you participate if the underlying is gaining in value.&lt;/p&gt;
 
+&lt;p&gt;The payoff from a protective put strategy:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../images/protective_put.png&quot; alt=&quot;Protective put&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Tue, 29 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/white-test.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/white-test.html</guid>
+        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/protective-put.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/protective-put.html</guid>
         
         
-        <category>statistics</category>
-        
-      </item>
-    
-      <item>
-        <title>Student&#39;s t distribution</title>
-        <description>&lt;script type=&quot;math/tex; mode=display&quot;&gt;mean=\mu&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;variance=(\frac{c}{c-2})\sigma^2&lt;/script&gt;
-
-&lt;p&gt;parameter c is degrees of freedom. The variance approaches the one of the normal distribution for large c.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;t=\frac{\bar{X}-\mu}{S_X/\sqrt{n}}&lt;/script&gt;
-
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;{S_X}^2 = \frac{1}{n-1}\sum{(X_i-\bar{X})^2}&lt;/script&gt; is the standard deviation of the sample.&lt;/p&gt;
-
-&lt;p&gt;Given some precalculated values from &lt;a href=&quot;http://en.wikipedia.org/wiki/Student%27s_t-distribution&quot;&gt;Wikipedia&lt;/a&gt; statistics tables, we can find the associated probability.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 29 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/students-t-distribution.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/students-t-distribution.html</guid>
-        
-        
-        <category>statistics</category>
+        <category>methods</category>
         
       </item>
     
