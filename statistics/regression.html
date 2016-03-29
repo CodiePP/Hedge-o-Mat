@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Jarque-Bera test (JB)</title>
+    <title>Regression</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="understanding and managing financial risks.">
-    <link rel="canonical" href="http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/jarque-bera-test.html">
+    <link rel="canonical" href="http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/regression.html">
 
     <!-- W3CSS -->
     <link rel="stylesheet" href="/Hedge-o-Mat/css/w3.css">
@@ -60,29 +60,51 @@
       <div class="post" style="margin-left:0px">
 
   <header class="post-header">
-    <h1>Jarque-Bera test (JB)</h1>
-    <p class="meta">Mar 29, 2016</p>
+    <h1>Regression</h1>
+    <p class="meta">Mar 30, 2016</p>
     
         <span class="meta"><a class="cat-link" href="/Hedge-o-Mat/statistics.html">statistics</a></span>  
     
   </header>
 
   <article class="post-content">
-  <p>Tests whether a distribution of a random variable follows the normal distribution. Thus, whether its third and fourth moments, the <a href="skewness.html">skewness</a> and <a href="kurtosis.html">kurtosis</a>, are equal to the values of a normal distribution: skewness = 0, kurtosis = 3.</p>
+  <p>Regression measures the linear relation between two timeseries.</p>
 
-<p>Using the error term (<script type="math/tex">\hat{u}</script>) of an OLS regression one can estimate these two parameters:</p>
+<script type="math/tex; mode=display">Y=\alpha+\beta*X+\epsilon</script>
 
-<p>Skewness: <script type="math/tex">b1 = \frac{E[u^3]}{(\sigma^2)^{3/2}}</script></p>
+<script type="math/tex; mode=display">\left[ \begin{array} {cccc} r_{11} \: r_{12} \ldots r_{1n} \\
+r_{21} \: r_{22} \ldots r_{2n} \\ \vdots 
+  \\ r_{k1} \: r_{k2} \ldots r_{kn} \end{array}\right]
+= \left[ \begin{array}{c} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{array}
+\right]^T + \left[ \begin{array}{c} \beta_1 \\ \beta_2 \\ \vdots \\ \beta_n
+\end{array} \right]^T \left[ \begin{array}{cc} 1 \: r_{X1} \\ 1 \: r_{X2}
+\\ \vdots \\ 1 \: r_{Xk} \end{array} \right]</script>
 
-<p>Kurtosis: <script type="math/tex">b2 = \frac{E[u^4]}{(\sigma^2)^{2}}</script></p>
+<p>In <code>Matlab</code>/<code>Octave</code>:</p>
 
-<p>Test statistics:</p>
+<div class="highlight"><pre><code class="language-octave" data-lang="octave"><span class="p">[</span><span class="n">alpha</span><span class="p">;</span><span class="nb">beta</span><span class="p">]=[</span><span class="mi">1</span><span class="p">,</span> <span class="n">r_X</span><span class="p">]</span>  <span class="o">\</span> <span class="n">r_kn</span><span class="p">;</span>
+<span class="n">residuals</span> <span class="p">=</span> <span class="n">r_kn</span> <span class="o">-</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="n">r_X</span><span class="p">]</span><span class="o">*</span><span class="p">[</span><span class="n">alpha</span><span class="p">;</span><span class="nb">beta</span><span class="p">]);</span>
+<span class="n">sigma_res</span> <span class="p">=</span> <span class="nb">std</span><span class="p">(</span><span class="n">residuals</span><span class="p">);</span>
+<span class="n">alpha_adj</span> <span class="p">=</span> <span class="n">alpha</span> <span class="o">./</span> <span class="n">sigma_res</span><span class="p">;</span></code></pre></div>
 
-<script type="math/tex; mode=display">W = T[\frac{b_1^2}{6} + \frac{(b_2 - 3)^2}{24}]</script>
+<p>Some wordings:</p>
 
-<p>where T is the sample size.</p>
+<p><script type="math/tex">ESS = \sum_t{(\hat{y}_t - \bar{y})^2}</script> explained sum of squares</p>
 
-<p>This test statistics follows a Chi<sup>2</sup> distribution with two degrees of freedom Χ<sup>2</sup>(2).</p>
+<p><script type="math/tex">RSS = \sum_t{\epsilon_t^2}</script> residual sum of squares</p>
+
+<p><script type="math/tex">TSS = \sum_t{(y_t - \bar{y})^2}</script> total sum of squares</p>
+
+<script type="math/tex; mode=display">TSS = ESS + RSS</script>
+
+<p>Goodness of fit (R<sup>2</sup>):</p>
+
+<script type="math/tex; mode=display">R^2 = 1 - \frac{ESS}{TSS}</script>
+
+<p>adjusted R<sup>2</sup> by loss of degree of freedom (k variables, T
+observations):
+<script type="math/tex">{R_{adj}}^2 = 1 - [ \frac{T - 1}{T - k} (1 - R^2) ]</script></p>
+
 
   </article>
 

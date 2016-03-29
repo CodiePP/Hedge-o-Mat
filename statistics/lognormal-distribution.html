@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Jarque-Bera test (JB)</title>
+    <title>Lognormal distribution</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="understanding and managing financial risks.">
-    <link rel="canonical" href="http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/jarque-bera-test.html">
+    <link rel="canonical" href="http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/lognormal-distribution.html">
 
     <!-- W3CSS -->
     <link rel="stylesheet" href="/Hedge-o-Mat/css/w3.css">
@@ -60,29 +60,40 @@
       <div class="post" style="margin-left:0px">
 
   <header class="post-header">
-    <h1>Jarque-Bera test (JB)</h1>
-    <p class="meta">Mar 29, 2016</p>
+    <h1>Lognormal distribution</h1>
+    <p class="meta">Mar 30, 2016</p>
     
         <span class="meta"><a class="cat-link" href="/Hedge-o-Mat/statistics.html">statistics</a></span>  
     
   </header>
 
   <article class="post-content">
-  <p>Tests whether a distribution of a random variable follows the normal distribution. Thus, whether its third and fourth moments, the <a href="skewness.html">skewness</a> and <a href="kurtosis.html">kurtosis</a>, are equal to the values of a normal distribution: skewness = 0, kurtosis = 3.</p>
+  <script type="math/tex; mode=display">mean=e^{a+0.5b^2}</script>
 
-<p>Using the error term (<script type="math/tex">\hat{u}</script>) of an OLS regression one can estimate these two parameters:</p>
+<script type="math/tex; mode=display">variance=e^{2a+b^2}*(e^{b^2}-1)</script>
 
-<p>Skewness: <script type="math/tex">b1 = \frac{E[u^3]}{(\sigma^2)^{3/2}}</script></p>
+<script type="math/tex; mode=display">pdf(x) = \frac{1}{\sqrt{2\pi}bx} \exp{(-\frac{1}{2b^2}*{(ln(x)-a)}^2)}</script>
 
-<p>Kurtosis: <script type="math/tex">b2 = \frac{E[u^4]}{(\sigma^2)^{2}}</script></p>
+<p>where <script type="math/tex">x>=0</script></p>
 
-<p>Test statistics:</p>
+<p>Two parameters: <script type="math/tex">a</script>, location; <script type="math/tex">b > 0</script> its scale.</p>
 
-<script type="math/tex; mode=display">W = T[\frac{b_1^2}{6} + \frac{(b_2 - 3)^2}{24}]</script>
+<p><img src="../images/lnpdf.png" alt="Lognormal probability distribution" /></p>
 
-<p>where T is the sample size.</p>
+<p>Code to reproduce this plot in <code>octave</code>:</p>
 
-<p>This test statistics follows a Chi<sup>2</sup> distribution with two degrees of freedom Χ<sup>2</sup>(2).</p>
+<div class="highlight"><pre><code class="language-octave" data-lang="octave"><span class="lineno"> 1 </span><span class="n">p</span><span class="p">=</span><span class="nb">lognpdf</span><span class="p">([</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="lineno"> 2 </span><span class="nb">plot</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<span class="lineno"> 3 </span><span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.3</span><span class="p">]);</span>
+<span class="lineno"> 4 </span><span class="nb">title</span><span class="p">(</span><span class="s">&quot;Log normal probability distribution&quot;</span><span class="p">);</span>
+<span class="lineno"> 5 </span><span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span>
+<span class="lineno"> 6 </span>    <span class="n">xl</span><span class="p">{</span><span class="n">i</span><span class="p">}=</span><span class="n">num2str</span><span class="p">(</span><span class="n">x</span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+<span class="lineno"> 7 </span><span class="k">end</span>
+<span class="lineno"> 8 </span><span class="n">xl</span><span class="p">{</span><span class="mi">8</span><span class="p">}</span> <span class="p">=</span> <span class="s">&#39; &#39;</span><span class="p">;</span>
+<span class="lineno"> 9 </span><span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span> <span class="s">&#39;XTicklabel&#39;</span><span class="p">,</span> <span class="n">xl</span><span class="p">);</span>
+<span class="lineno">10 </span><span class="nb">print</span><span class="p">(</span><span class="s">&#39;lnpdf.ps&#39;</span><span class="p">,</span> <span class="s">&#39;-dpsc2&#39;</span><span class="p">);</span>
+<span class="lineno">11 </span><span class="c"># convert lnpdf.ps -trim -resize 70% lnpdf.png</span></code></pre></div>
+
 
   </article>
 
