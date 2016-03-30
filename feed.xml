@@ -5,423 +5,255 @@
     <description>understanding and managing financial risks.</description>
     <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/</link>
     <atom:link href="http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 30 Mar 2016 01:08:00 +0200</pubDate>
-    <lastBuildDate>Wed, 30 Mar 2016 01:08:00 +0200</lastBuildDate>
+    <pubDate>Thu, 31 Mar 2016 00:42:35 +0200</pubDate>
+    <lastBuildDate>Thu, 31 Mar 2016 00:42:35 +0200</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
-        <title>Volatility smile</title>
-        <description>&lt;p&gt;see chapter 18 in &lt;a title=&quot;Hull: Options, Futures and other Derivatives&quot; href=&quot;../books/hull-options-futures-and-other-derivatives.html&quot;&gt;Hull, Options,
-Futures, and other Derivatives&lt;/a&gt;&lt;/p&gt;
+        <title>Vega</title>
+        <description>&lt;p&gt;Vega is the percentage change of the option’s price relative to an increase of
+1% of the volatility.&lt;/p&gt;
 
-&lt;p&gt;Given that the &lt;a href=&quot;put-call-parity.html&quot;&gt;Call-Put-Parity&lt;/a&gt; holds, all 
-&lt;a href=&quot;../instruments/option.html&quot;&gt;options&lt;/a&gt;, whether calls or puts,
-should be of the same price. As price we mean the implied volatility of the
-option if we solve the Black-Scholes-Merton formula for the volatility parameter
-given all other parameters (interest rate, time to maturity, market price, ..)
-known. This volatility is implied by the prices of the options and therefore
-called &lt;code&gt;implied volatility&lt;/code&gt;.&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial V}{\partial \sigma} = S \sqrt{T}e^{-qT}N&#39;(d1)&lt;/script&gt;
 
-&lt;p&gt;Under the non-arbitrage argument the prices of puts and calls should be the
-same. However, as we compare market prices of such options and solve the BSM
-formula for the implied volatility we observe significant deviation from zero
-difference.&lt;/p&gt;
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;N&#39;(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}&lt;/script&gt;&lt;/p&gt;
 
-&lt;p&gt;TODO: [ here follows a picture ]&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Smile&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;One argument for the SMILE is that the &lt;a href=&quot;black-scholes-merton.html&quot;&gt;Black-Scholes-Merton formula&lt;/a&gt;
-implies a static volatility whereas in real world this is certainly to move
-every day. Another argument is that the BSM formula depends on lognormal
-distributed returns whereas real world options’ returns deviate from this
-distribution. Empirically it has been shown that the lognormal distribution
-underestimates the heavy tails and thus the occurrence of rare events. This
-would enable an arbitrageur to collect a premium if she would buy deep out of
-the money put and call options as these are priced too cheap. On the rare event
-it will pay off.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Smirk&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The implied volatilities of puts and calls having the same degree of moneyness
-can also deviate. In this situation we call the volatility smile a smirk as it
-is left skewed.&lt;/p&gt;
-
-&lt;p&gt;[ here follows a picture ]&lt;/p&gt;
-
-&lt;p&gt;Reasons for this can be that shorting of the underlying instrument can be more
-expensive or simply, investors afford more to protect the downside risk.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Volatility Surface&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;We can draw the implied volatility against moneyness (i.e. &lt;script type=&quot;math/tex&quot;&gt;K/S&lt;/script&gt;) and time
-to maturity.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-octave&quot; data-lang=&quot;octave&quot;&gt;&lt;span class=&quot;n&quot;&gt;ivsurf&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-&lt;span class=&quot;mf&quot;&gt;14.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;12.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;mf&quot;&gt;14.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;12.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;mf&quot;&gt;14.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;12.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;mf&quot;&gt;14.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;mf&quot;&gt;15.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;15.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;mf&quot;&gt;14.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;14.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;15.0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;surf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ivsurf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;gca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;XTickLabel&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.95&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.05&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;gca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;YTickLabel&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;1m&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;3m&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;6m&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;1y&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;2y&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;5y&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;gca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;view&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;48&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;volasurf_ch18.ps&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;-dpsc2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;../images/volasurf_ch18.png&quot; alt=&quot;Volatility surface&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;From a set of priced options (both puts and calls) we can derive their implied
-volatilities. Using some interpolation on the grid of moneyness, time to
-maturity we calculate the surface of expected implied volatilities.&lt;/p&gt;
-
+&lt;p&gt;(see &lt;a href=&quot;../methods/black-scholes-merton.html&quot;&gt;Black-Scholes-Merton formula&lt;/a&gt;)&lt;/p&gt;
 </description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/volatility-smile.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/volatility-smile.html</guid>
+        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/measure/vega.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/measure/vega.html</guid>
         
         
-        <category>methods</category>
+        <category>measure</category>
         
       </item>
     
       <item>
-        <title>Variance</title>
-        <description>&lt;p&gt;Measures the variance of a series of values around their mean value.&lt;/p&gt;
+        <title>Theta</title>
+        <description>&lt;p&gt;Theta reduces an option’s price every day until the expiration date is reached.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Var(X)=\frac{1}{N}\sum_i{(X_i-\bar{X})^2}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial V}{\partial S} = -\frac{\sigma S e^{-qT}N&#39;(d1)}{2\sqrt{T}} +
+qSN(d1)e^{-qT} - rKe^{-rT}N(d2)&lt;/script&gt;
 
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\bar{X}=\frac{1}{N}*\sum_i{X_i}&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;N&#39;(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}&lt;/script&gt;&lt;/p&gt;
 
-&lt;p&gt;The variance can be computed incrementally:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Var(X)=\bar{X^2}-(\bar{X}*\bar{X})&lt;/script&gt;
-
-&lt;p&gt;Thus, we sum all &lt;script type=&quot;math/tex&quot;&gt;X_i&lt;/script&gt; and all &lt;script type=&quot;math/tex&quot;&gt;X_i^2&lt;/script&gt;, then build the difference of their
-mean values.&lt;/p&gt;
-
+&lt;p&gt;(see &lt;a href=&quot;../methods/black-scholes-merton.html&quot;&gt;Black-Scholes-Merton formula&lt;/a&gt;)&lt;/p&gt;
 </description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/variance.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/variance.html</guid>
+        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/measure/theta.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/measure/theta.html</guid>
         
         
-        <category>statistics</category>
+        <category>measure</category>
         
       </item>
     
       <item>
-        <title>Value at risk (VAR)</title>
-        <description>&lt;p&gt;Value at risk measures the maximal loss at a certain significance level over a
-certain time span. Often this figure is indicated in absolute values of total
-assets, but a percentage value is also seen.&lt;/p&gt;
+        <title>Swap</title>
+        <description>&lt;p&gt;Exchange of cash flows from fixed interest for floating interest.
+Several types: interest rate swap, currency swap, equity swap, volatility swap,
+commodity swap, …&lt;/p&gt;
 
-&lt;p&gt;The significance level (or 1 - confidence level) depends on our attitude towards
-risk. The more risk we can bear, the higher this value. The Basel II accord
-demands banks to calculate VAR at the 1% significance level (i.e. 99% confidence
-level).&lt;/p&gt;
+&lt;p&gt;Example of a plain vanilla interest rate swap using bonds:
+discount fixed rate cash flows, discount floating rate cash flows and take
+difference.
+fixed rate=6%,semiannually, floating rates=(5.4%,5.6%,5.8%), 1M notional, every
+6 months, for 1.5 years.
+&lt;script type=&quot;math/tex&quot;&gt;B_{fixed} = 30&#39;000 e^{-(0.054*0.5)} + 30&#39;000 e^{-(0.056*1)} + 1&#39;030&#39;000
+e^{-(0.058*1.5)} = 1&#39;001&#39;744.42&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;B_{floating} = 1&#39;000&#39;000 * (1 + \frac{0.05}{2}) e^{(-0.054*0.5)} = 997&#39;695.27&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;V_{swap} = (B_{fixed} - B_{floating}) = 4&#39;049.15&lt;/script&gt;&lt;/p&gt;
 
-&lt;p&gt;The time span or risk horizon should match our exposure to the assets in trading
-days. The Basel II accord demands banks to calculate VAR for a 10 days horizon.
-The more liquid an investment the shorter the risk horizon and vice versa. For
-extremely liquid positions like major currency pairs, VAR is calculated
-intra-day.&lt;/p&gt;
-
-&lt;p&gt;Good coverage of this subject in these books: &lt;a title=&quot;Jorion: Value at Risk&quot; href=&quot;../books/jorion-value-at-risk.html&quot;&gt;Jorion, Value at Risk&lt;/a&gt; and &lt;a title=&quot;Alexander: Market Risk Analysis IV, Value-at-Risk Models&quot; href=&quot;../books/alexander-market-risk-analysis-iv-value-at-risk-models.html&quot;&gt;Alexander,
-Value-at-Risk Models&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/var.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/var.html</guid>
-        
-        
-        <category>methods</category>
-        
-      </item>
-    
-      <item>
-        <title>Tracking error</title>
-        <description>&lt;p&gt;The tracking error of a portfolio is defined as the annualized standard
-deviation of its excess returns over a benchmark.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\alpha =( r_{Pf} - r_{Bm})&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;TE = sqrt{\sum{(\alpha_i - \bar{\alpha})^2}}&lt;/script&gt;
-
-</description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/tracking-error.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/tracking-error.html</guid>
-        
-        
-        <category>methods</category>
-        
-      </item>
-    
-      <item>
-        <title>Sharpe ratio</title>
-        <description>&lt;p&gt;The Sharpe ratio indicates the excess return of a portfolio over its risk.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{r_P-r_f}{\sigma_P}&lt;/script&gt;
-
-</description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/sharpe-ratio.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/sharpe-ratio.html</guid>
-        
-        
-        <category>methods</category>
-        
-      </item>
-    
-      <item>
-        <title>Saving time</title>
-        <description>&lt;p&gt;How long does it take to reach a target value when you have X start capital and
-earn interest.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{log(V2/V1)}{log(1+r)}&lt;/script&gt;
-
-</description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/saving-time.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/saving-time.html</guid>
-        
-        
-        <category>methods</category>
-        
-      </item>
-    
-      <item>
-        <title>Regression</title>
-        <description>&lt;p&gt;Regression measures the linear relation between two timeseries.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Y=\alpha+\beta*X+\epsilon&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left[ \begin{array} {cccc} r_{11} \: r_{12} \ldots r_{1n} \\
-r_{21} \: r_{22} \ldots r_{2n} \\ \vdots 
-  \\ r_{k1} \: r_{k2} \ldots r_{kn} \end{array}\right]
-= \left[ \begin{array}{c} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{array}
-\right]^T + \left[ \begin{array}{c} \beta_1 \\ \beta_2 \\ \vdots \\ \beta_n
-\end{array} \right]^T \left[ \begin{array}{cc} 1 \: r_{X1} \\ 1 \: r_{X2}
-\\ \vdots \\ 1 \: r_{Xk} \end{array} \right]&lt;/script&gt;
-
-&lt;p&gt;In &lt;code&gt;Matlab&lt;/code&gt;/&lt;code&gt;Octave&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-octave&quot; data-lang=&quot;octave&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;beta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]=[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r_X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;\&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r_kn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;residuals&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r_kn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r_X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;beta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;sigma_res&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;residuals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;alpha_adj&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alpha&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;./&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sigma_res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Some wordings:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;ESS = \sum_t{(\hat{y}_t - \bar{y})^2}&lt;/script&gt; explained sum of squares&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;RSS = \sum_t{\epsilon_t^2}&lt;/script&gt; residual sum of squares&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;TSS = \sum_t{(y_t - \bar{y})^2}&lt;/script&gt; total sum of squares&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;TSS = ESS + RSS&lt;/script&gt;
-
-&lt;p&gt;Goodness of fit (R&lt;sup&gt;2&lt;/sup&gt;):&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;R^2 = 1 - \frac{ESS}{TSS}&lt;/script&gt;
-
-&lt;p&gt;adjusted R&lt;sup&gt;2&lt;/sup&gt; by loss of degree of freedom (k variables, T
-observations):
-&lt;script type=&quot;math/tex&quot;&gt;{R_{adj}}^2 = 1 - [ \frac{T - 1}{T - k} (1 - R^2) ]&lt;/script&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/regression.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/statistics/regression.html</guid>
-        
-        
-        <category>statistics</category>
-        
-      </item>
-    
-      <item>
-        <title>Ratings</title>
-        <description>&lt;p&gt;Comparison of credit ratings from &lt;a title=&quot;Moody&#39;s Ratings&quot; href=&quot;http://www.moodysanalytics.com/&quot; target=&quot;_blank&quot;&gt;Moody’s&lt;/a&gt;, &lt;a title=&quot;S&amp;amp;P Ratings&quot; href=&quot;http://www.standardandpoors.com/ratings/en/us/&quot; target=&quot;_blank&quot;&gt;Standard &amp;amp; Poor’s&lt;/a&gt; and &lt;a title=&quot;Fitch Ratings&quot; href=&quot;http://www.fitchratings.com/&quot; target=&quot;_blank&quot;&gt;Fitch&lt;/a&gt;.&lt;/p&gt;
-&lt;table style=&quot;height: 504px&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;312&quot;&gt;&lt;col span=&quot;3&quot; width=&quot;104&quot; /&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td width=&quot;104&quot; height=&quot;21&quot;&gt;Moody&#39;s&lt;/td&gt;
-&lt;td width=&quot;104&quot;&gt;S&amp;amp;P / Fitch&lt;/td&gt;
-&lt;td width=&quot;104&quot;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Aaa&lt;/td&gt;
-&lt;td&gt;AAA&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Aa1&lt;/td&gt;
-&lt;td&gt;AA+&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Aa2&lt;/td&gt;
-&lt;td&gt;AA&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Aa3&lt;/td&gt;
-&lt;td&gt;AA-&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;A1&lt;/td&gt;
-&lt;td&gt;A+&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;A2&lt;/td&gt;
-&lt;td&gt;A&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;A3&lt;/td&gt;
-&lt;td&gt;A-&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Baa1&lt;/td&gt;
-&lt;td&gt;BBB+&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Baa2&lt;/td&gt;
-&lt;td&gt;BBB&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Baa3&lt;/td&gt;
-&lt;td&gt;BBB-&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td colspan=&quot;2&quot; height=&quot;21&quot;&gt;&lt;em&gt;non-investment grade:&lt;/em&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Ba1&lt;/td&gt;
-&lt;td&gt;BB+&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Ba2&lt;/td&gt;
-&lt;td&gt;BB&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Ba3&lt;/td&gt;
-&lt;td&gt;BB-&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;B1&lt;/td&gt;
-&lt;td&gt;B+&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;B2&lt;/td&gt;
-&lt;td&gt;B&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;B3&lt;/td&gt;
-&lt;td&gt;B-&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Caa1&lt;/td&gt;
-&lt;td&gt;CCC&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Caa2&lt;/td&gt;
-&lt;td&gt;CC&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Caa3&lt;/td&gt;
-&lt;td&gt;C&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;Ca&lt;/td&gt;
-&lt;td&gt;CI&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td height=&quot;21&quot;&gt;C&lt;/td&gt;
-&lt;td&gt;D&lt;/td&gt;
-&lt;td&gt;default!&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+&lt;p&gt;Example of currency swap valuation using forwards:
+paid rate for USD: 5%, received rate for GBP: 6%
+GBPUSD = 1.50, interest rates in USD: 2%, GBP: 4%, time: 2 years, annually paid.&lt;/p&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;Time&lt;/th&gt;&lt;th&gt;USD CF&lt;/th&gt;&lt;th&gt;GBP CF&lt;/th&gt;&lt;th&gt;forward rate&lt;/th&gt;&lt;th&gt;$ per
+GBP&lt;/th&gt;&lt;th&gt;Net CF&lt;/th&gt;&lt;th&gt;PV of Net CF&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;7.5&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;1.47&lt;/td&gt;&lt;td&gt;8.82&lt;/td&gt;&lt;td&gt;-1.32&lt;/td&gt;&lt;td&gt;-1.294&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;7.5&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;1.441&lt;/td&gt;&lt;td&gt;8.646&lt;/td&gt;&lt;td&gt;-1.146&lt;/td&gt;&lt;td&gt;-1.101&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;150&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;1.441&lt;/td&gt;&lt;td&gt;144.1&lt;/td&gt;&lt;td&gt;5.9&lt;/td&gt;&lt;td&gt;5.669&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td align=&quot;left&quot; colspan=&quot;6&quot;&gt;Total&lt;/td&gt;&lt;td&gt;3.274&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
-&lt;table border=&quot;0&quot;&gt;
-&lt;tbody&gt;&lt;/tbody&gt;
-&lt;tbody&gt;&lt;/tbody&gt;
-&lt;tbody&gt;&lt;/tbody&gt;
-&lt;tbody&gt;&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Investment grade Moody’s &amp;gt;= Baa3, S&amp;amp;P/Fitch &amp;gt;= BBB.&lt;/p&gt;
+
+&lt;p&gt;Forward rate calculation: &lt;script type=&quot;math/tex&quot;&gt;F_1 = 1.5 e^{(2{\%}-4{\%})*T)}&lt;/script&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/ratings.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/ratings.html</guid>
+        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/swap.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/swap.html</guid>
         
         
-        <category>methods</category>
+        <category>instruments</category>
         
       </item>
     
       <item>
-        <title>Put-call parity</title>
-        <description>&lt;p&gt;For European calls and puts their prices are related by the Put-call parity:&lt;/p&gt;
+        <title>Strangle</title>
+        <description>&lt;p&gt;Similar to the &lt;a href=&quot;straddle.html&quot;&gt;straddle&lt;/a&gt;, with this
+option trading strategy an investor bets on large price move of the underlying.
+It is cheaper than a straddle because we buy the put and the call with different
+out-of-the-money strikes.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;p + S_0e^{-qT} = c + Ke^{-rT}&lt;/script&gt;
+&lt;p&gt;&lt;strong&gt;Payoff strangle&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; are the prices of the put, call options and &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; is the
-current spot price of the underlying, &lt;script type=&quot;math/tex&quot;&gt;K&lt;/script&gt; the strike price, &lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt; the time to
-maturity. The interest rate is integrated with &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; denotes the
-dividend yield on the stock.&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&quot;../images/strangle.png&quot; alt=&quot;strangle&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/put-call-parity.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/put-call-parity.html</guid>
+        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/strangle.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/strangle.html</guid>
         
         
-        <category>methods</category>
+        <category>instruments</category>
         
       </item>
     
       <item>
-        <title>Protective put</title>
-        <description>&lt;p&gt;Buy a &lt;a href=&quot;../instruments/put.html&quot;&gt;put&lt;/a&gt; option to protect
-a portfolio from downside risk. You lose at most the premium paid for the put
-option, but you participate if the underlying is gaining in value.&lt;/p&gt;
+        <title>Straddle</title>
+        <description>&lt;p&gt;Straddles are combinations of one call and one put with the same strike price
+and expiration date. This strategy costs a significant upfront investment (the
+premia for the call and the put), but could end up in profit if the underlying’s
+spot price at expiration is above or below the strike price. One might choose
+this type of option trading strategy before surprising announcements. But the
+counterparty might already have priced the “big move” in the premium (higher
+implied volatility) of the options.
+If the same strategy is shortened, i.e. short put and short call, the payoff is
+inverted: limited profit, but unlimited loss in case of a big move.&lt;/p&gt;
 
-&lt;p&gt;The payoff from a protective put strategy:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Payoff straddle&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../images/protective_put.png&quot; alt=&quot;Protective put&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../images/straddle.png&quot; alt=&quot;straddle&quot; /&gt;&lt;/p&gt;
+
 </description>
-        <pubDate>Wed, 30 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/protective-put.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/methods/protective-put.html</guid>
+        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/straddle.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/straddle.html</guid>
         
         
-        <category>methods</category>
+        <category>instruments</category>
+        
+      </item>
+    
+      <item>
+        <title>Rho</title>
+        <description>&lt;p&gt;This indicates the change of the option’s price relative to an increase of
+interest rates by 1%.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial V}{\partial r} = KTe^{-rT}N(d2)&lt;/script&gt;
+
+&lt;p&gt;(see &lt;a href=&quot;../methods/black-scholes-merton.html&quot;&gt;Black-Scholes-Merton formula&lt;/a&gt;)&lt;/p&gt;
+</description>
+        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/measure/rho.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/measure/rho.html</guid>
+        
+        
+        <category>measure</category>
+        
+      </item>
+    
+      <item>
+        <title>Put option</title>
+        <description>&lt;p&gt;A put option is the right to sell the underlying security at a specified time in
+the future for a defined price. On the other hand, the short side must accept
+delivery and pay the price.&lt;/p&gt;
+
+&lt;p&gt;The payout diagram of a short put:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../images/option_put.png&quot; alt=&quot;put option&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/put-option.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/put-option.html</guid>
+        
+        
+        <category>instruments</category>
+        
+      </item>
+    
+      <item>
+        <title>Option</title>
+        <description>&lt;p&gt;An option gives the holder of the contract the right to buy/sell an underlying
+asset for a fixed price at a defined time in the futurue (termed European style
+options).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;it&#39;s a right and not an obligation (much like an insurance)&lt;/li&gt;
+&lt;li&gt;execution prior to defined date: American style option&lt;/li&gt;
+&lt;li&gt;a call option is the right to buy&lt;/li&gt;
+&lt;li&gt;a put option is the right to sell&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The payout  of a &lt;strong&gt;call&lt;/strong&gt; option: &lt;script type=&quot;math/tex&quot;&gt;C_T = max(0, S_T - X)&lt;/script&gt;. (S
+is stock price at exerc. time, X is pre-defined strike price). A holder of the
+option will only exercise his right if the price of the underlying asset is
+&lt;span style=&quot;text-decoration: underline&quot;&gt;above&lt;/span&gt; the strike price at time
+T.&lt;/p&gt;
+
+&lt;p&gt;The payout of a &lt;strong&gt;put&lt;/strong&gt; option: &lt;script type=&quot;math/tex&quot;&gt;C_T = max(0, X - S_T)&lt;/script&gt;. A
+holder of the  option will only exercise his right if the price of the
+underlying asset  is &lt;span style=&quot;text-decoration: underline&quot;&gt;below&lt;/span&gt; the
+strike price at time T.&lt;/p&gt;
+
+&lt;p&gt;The premium of an option is usually calculated using the &lt;a href=&quot;../methods/black-scholes-merton.html&quot;&gt;Black-Scholes-Merton formula&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There also exist a number of “exotic” options: …&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Payout diagrams&lt;/strong&gt;: at the maturity of the option, depending on
+the spot price of the underlying, shown on the x-axis, we will realize a profit
+or a loss, shown on the y-axis.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../images/option_call.png&quot; alt=&quot;call option&quot; /&gt;
+&lt;img src=&quot;../images/option_put.png&quot; alt=&quot;put option&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/option.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/option.html</guid>
+        
+        
+        <category>instruments</category>
+        
+      </item>
+    
+      <item>
+        <title>Jorion: Value at Risk</title>
+        <description>&lt;p&gt;Jorion, Ph.
+&lt;em&gt;Value at Risk&lt;/em&gt;: the new benchmark for managing financial risk
+McGraw-Hill, 3rd ed., &lt;strong&gt;2007&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the source of knowledge over VAR you cannot skip!&lt;/p&gt;
+
+&lt;p&gt;[I will put here its table of content, once found]&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/books/jorion-value-at-risk.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/books/jorion-value-at-risk.html</guid>
+        
+        
+        <category>books</category>
+        
+      </item>
+    
+      <item>
+        <title>Hull: Options, Futures and other Derivatives</title>
+        <description>&lt;p&gt;Hull, J.
+&lt;em&gt;Options, Futures, and other Derivatives&lt;/em&gt;
+Prentice Hall, 7th ed., &lt;strong&gt;2008&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a “must” read! The book covers thoroughly all major aspects of valuing
+derivatives. It can also serve as a handbook for the practice oriented who needs
+quick answers and illustrative examples.&lt;/p&gt;
+
+&lt;p&gt;[I will put here its table of content, once found]&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
+        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/books/hull-options-futures-and-other-derivatives.html</link>
+        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/books/hull-options-futures-and-other-derivatives.html</guid>
+        
+        
+        <category>books</category>
         
       </item>
     
