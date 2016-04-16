@@ -5,9 +5,30 @@
     <description>understanding and managing financial risks.</description>
     <link>/Hedge-o-Mat/</link>
     <atom:link href="/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 16 Apr 2016 23:09:44 +0200</pubDate>
-    <lastBuildDate>Sat, 16 Apr 2016 23:09:44 +0200</lastBuildDate>
+    <pubDate>Sat, 16 Apr 2016 23:20:25 +0200</pubDate>
+    <lastBuildDate>Sat, 16 Apr 2016 23:20:25 +0200</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Sharpe ratio</title>
+        <description>&lt;p&gt;The Sharpe ratio indicates the excess return of a portfolio over its risk
+(volatility).&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{r_P-r_f}{\sigma_P}&lt;/script&gt;
+
+&lt;h2 id=&quot;calculator&quot;&gt;calculator&lt;/h2&gt;
+
+&lt;iframe width=&quot;420&quot; height=&quot;120&quot; src=&quot;/Hedge-o-Mat/static/sharpe.html&quot;&gt;&lt;/iframe&gt;
+
+</description>
+        <pubDate>Sun, 17 Apr 2016 00:44:01 +0200</pubDate>
+        <link>/Hedge-o-Mat/methods/sharpe-ratio.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/methods/sharpe-ratio.html</guid>
+        
+        
+        <category>methods</category>
+        
+      </item>
     
       <item>
         <title>Vega</title>
@@ -229,28 +250,6 @@ McGraw-Hill, 3rd ed., &lt;strong&gt;2007&lt;/strong&gt;&lt;/p&gt;
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
         <link>/Hedge-o-Mat/books/jorion-value-at-risk.html</link>
         <guid isPermaLink="true">/Hedge-o-Mat/books/jorion-value-at-risk.html</guid>
-        
-        
-        <category>books</category>
-        
-      </item>
-    
-      <item>
-        <title>Hull: Options, Futures and other Derivatives</title>
-        <description>&lt;p&gt;Hull, J.
-&lt;em&gt;Options, Futures, and other Derivatives&lt;/em&gt;
-Prentice Hall, 7th ed., &lt;strong&gt;2008&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;This is a “must” read! The book covers thoroughly all major aspects of valuing
-derivatives. It can also serve as a handbook for the practice oriented who needs
-quick answers and illustrative examples.&lt;/p&gt;
-
-&lt;p&gt;[I will put here its table of content, once found]&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>/Hedge-o-Mat/books/hull-options-futures-and-other-derivatives.html</link>
-        <guid isPermaLink="true">/Hedge-o-Mat/books/hull-options-futures-and-other-derivatives.html</guid>
         
         
         <category>books</category>
