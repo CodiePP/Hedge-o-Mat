@@ -3,10 +3,10 @@
   <channel>
     <title>Hedge-o-Mat - on financial risk management</title>
     <description>understanding and managing financial risks.</description>
-    <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/</link>
-    <atom:link href="http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 16 Apr 2016 22:50:36 +0200</pubDate>
-    <lastBuildDate>Sat, 16 Apr 2016 22:50:36 +0200</lastBuildDate>
+    <link>/Hedge-o-Mat/</link>
+    <atom:link href="/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 16 Apr 2016 22:54:27 +0200</pubDate>
+    <lastBuildDate>Sat, 16 Apr 2016 22:54:27 +0200</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -21,8 +21,8 @@
 &lt;p&gt;(see &lt;a href=&quot;../methods/black-scholes-merton.html&quot;&gt;Black-Scholes-Merton formula&lt;/a&gt;)&lt;/p&gt;
 </description>
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/measure/vega.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/measure/vega.html</guid>
+        <link>/Hedge-o-Mat/measure/vega.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/measure/vega.html</guid>
         
         
         <category>measure</category>
@@ -41,8 +41,8 @@ qSN(d1)e^{-qT} - rKe^{-rT}N(d2)&lt;/script&gt;
 &lt;p&gt;(see &lt;a href=&quot;../methods/black-scholes-merton.html&quot;&gt;Black-Scholes-Merton formula&lt;/a&gt;)&lt;/p&gt;
 </description>
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/measure/theta.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/measure/theta.html</guid>
+        <link>/Hedge-o-Mat/measure/theta.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/measure/theta.html</guid>
         
         
         <category>measure</category>
@@ -81,8 +81,8 @@ GBP&lt;/th&gt;&lt;th&gt;Net CF&lt;/th&gt;&lt;th&gt;PV of Net CF&lt;/th&gt;&lt;/t
 
 </description>
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/swap.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/swap.html</guid>
+        <link>/Hedge-o-Mat/instruments/swap.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/instruments/swap.html</guid>
         
         
         <category>instruments</category>
@@ -101,8 +101,8 @@ out-of-the-money strikes.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;../images/strangle.png&quot; alt=&quot;strangle&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/strangle.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/strangle.html</guid>
+        <link>/Hedge-o-Mat/instruments/strangle.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/instruments/strangle.html</guid>
         
         
         <category>instruments</category>
@@ -127,8 +127,8 @@ inverted: limited profit, but unlimited loss in case of a big move.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/straddle.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/straddle.html</guid>
+        <link>/Hedge-o-Mat/instruments/straddle.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/instruments/straddle.html</guid>
         
         
         <category>instruments</category>
@@ -145,8 +145,8 @@ interest rates by 1%.&lt;/p&gt;
 &lt;p&gt;(see &lt;a href=&quot;../methods/black-scholes-merton.html&quot;&gt;Black-Scholes-Merton formula&lt;/a&gt;)&lt;/p&gt;
 </description>
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/measure/rho.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/measure/rho.html</guid>
+        <link>/Hedge-o-Mat/measure/rho.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/measure/rho.html</guid>
         
         
         <category>measure</category>
@@ -164,8 +164,8 @@ delivery and pay the price.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;../images/option_put.png&quot; alt=&quot;put option&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/put-option.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/put-option.html</guid>
+        <link>/Hedge-o-Mat/instruments/put-option.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/instruments/put-option.html</guid>
         
         
         <category>instruments</category>
@@ -207,8 +207,8 @@ or a loss, shown on the y-axis.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/option.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/instruments/option.html</guid>
+        <link>/Hedge-o-Mat/instruments/option.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/instruments/option.html</guid>
         
         
         <category>instruments</category>
@@ -227,8 +227,8 @@ McGraw-Hill, 3rd ed., &lt;strong&gt;2007&lt;/strong&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/books/jorion-value-at-risk.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/books/jorion-value-at-risk.html</guid>
+        <link>/Hedge-o-Mat/books/jorion-value-at-risk.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/books/jorion-value-at-risk.html</guid>
         
         
         <category>books</category>
@@ -249,8 +249,8 @@ quick answers and illustrative examples.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/books/hull-options-futures-and-other-derivatives.html</link>
-        <guid isPermaLink="true">http://codiepp.github.io/Hedge-o-Mat/Hedge-o-Mat/books/hull-options-futures-and-other-derivatives.html</guid>
+        <link>/Hedge-o-Mat/books/hull-options-futures-and-other-derivatives.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/books/hull-options-futures-and-other-derivatives.html</guid>
         
         
         <category>books</category>
