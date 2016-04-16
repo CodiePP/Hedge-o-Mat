@@ -6,10 +6,10 @@ categories: books
 ---
 
 Jorion, Ph.
-<em>Value at Risk</em>: the new benchmark for managing financial risk
-McGraw-Hill, 3rd ed., <strong>2007</strong>
+**_Value at Risk_**: the new benchmark for managing financial risk
+McGraw-Hill, 3rd ed., **2007**
 
-This is the source of knowledge over VAR you cannot skip!
+This is the source of knowledge on [VAR](../methods/var.html) you cannot skip!
 
 [I will put here its table of content, once found]
 
