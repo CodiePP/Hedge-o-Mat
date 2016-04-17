@@ -5,9 +5,30 @@
     <description>understanding and managing financial risks.</description>
     <link>/Hedge-o-Mat/</link>
     <atom:link href="/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 18 Apr 2016 00:02:52 +0200</pubDate>
-    <lastBuildDate>Mon, 18 Apr 2016 00:02:52 +0200</lastBuildDate>
+    <pubDate>Mon, 18 Apr 2016 00:05:19 +0200</pubDate>
+    <lastBuildDate>Mon, 18 Apr 2016 00:05:19 +0200</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Saving time</title>
+        <description>&lt;p&gt;How long does it take to reach a target value when you have X start capital and
+earn interest.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{log(V2/V1)}{log(1+r)}&lt;/script&gt;
+
+&lt;h2 id=&quot;calculator&quot;&gt;calculator&lt;/h2&gt;
+
+&lt;iframe width=&quot;420&quot; height=&quot;120&quot; src=&quot;/Hedge-o-Mat/static/saving.html&quot;&gt;&lt;/iframe&gt;
+
+</description>
+        <pubDate>Mon, 18 Apr 2016 00:44:01 +0200</pubDate>
+        <link>/Hedge-o-Mat/methods/saving-time.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/methods/saving-time.html</guid>
+        
+        
+        <category>methods</category>
+        
+      </item>
     
       <item>
         <title>Sharpe ratio</title>
@@ -233,26 +254,6 @@ or a loss, shown on the y-axis.&lt;/p&gt;
         
         
         <category>instruments</category>
-        
-      </item>
-    
-      <item>
-        <title>Jorion: Value at Risk</title>
-        <description>&lt;p&gt;Jorion, Ph.
-&lt;strong&gt;&lt;em&gt;Value at Risk&lt;/em&gt;&lt;/strong&gt;: the new benchmark for managing financial risk
-McGraw-Hill, 3rd ed., &lt;strong&gt;2007&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;This is the source of knowledge on &lt;a href=&quot;../methods/var.html&quot;&gt;VAR&lt;/a&gt; you cannot skip!&lt;/p&gt;
-
-&lt;p&gt;[I will put here its table of content, once found]&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>/Hedge-o-Mat/books/jorion-value-at-risk.html</link>
-        <guid isPermaLink="true">/Hedge-o-Mat/books/jorion-value-at-risk.html</guid>
-        
-        
-        <category>books</category>
         
       </item>
     
