@@ -5,8 +5,8 @@
     <description>understanding and managing financial risks.</description>
     <link>/Hedge-o-Mat/</link>
     <atom:link href="/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 18 Apr 2016 00:05:19 +0200</pubDate>
-    <lastBuildDate>Mon, 18 Apr 2016 00:05:19 +0200</lastBuildDate>
+    <pubDate>Mon, 18 Apr 2016 08:14:39 +0200</pubDate>
+    <lastBuildDate>Mon, 18 Apr 2016 08:14:39 +0200</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -24,6 +24,46 @@ earn interest.&lt;/p&gt;
         <pubDate>Mon, 18 Apr 2016 00:44:01 +0200</pubDate>
         <link>/Hedge-o-Mat/methods/saving-time.html</link>
         <guid isPermaLink="true">/Hedge-o-Mat/methods/saving-time.html</guid>
+        
+        
+        <category>methods</category>
+        
+      </item>
+    
+      <item>
+        <title>Present value</title>
+        <description>&lt;p&gt;Value a cash flow payable in time T from now: discount by interest rate.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;PV = FV * (1+r)^{-T}&lt;/script&gt;
+
+&lt;h2 id=&quot;calculator&quot;&gt;calculator&lt;/h2&gt;
+
+&lt;iframe width=&quot;420&quot; height=&quot;120&quot; src=&quot;/Hedge-o-Mat/static/presentv.html&quot;&gt;&lt;/iframe&gt;
+
+</description>
+        <pubDate>Mon, 18 Apr 2016 00:44:01 +0200</pubDate>
+        <link>/Hedge-o-Mat/methods/present-value.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/methods/present-value.html</guid>
+        
+        
+        <category>methods</category>
+        
+      </item>
+    
+      <item>
+        <title>Future value</title>
+        <description>&lt;p&gt;Value of an asset in time T when receiving interest.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;FV = PV * (1+r)^{T}&lt;/script&gt;
+
+&lt;h2 id=&quot;calculator&quot;&gt;calculator&lt;/h2&gt;
+
+&lt;iframe width=&quot;420&quot; height=&quot;120&quot; src=&quot;/Hedge-o-Mat/static/futurev.html&quot;&gt;&lt;/iframe&gt;
+
+</description>
+        <pubDate>Mon, 18 Apr 2016 00:44:01 +0200</pubDate>
+        <link>/Hedge-o-Mat/methods/future-value.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/methods/future-value.html</guid>
         
         
         <category>methods</category>
@@ -192,68 +232,6 @@ interest rates by 1%.&lt;/p&gt;
         
         
         <category>measure</category>
-        
-      </item>
-    
-      <item>
-        <title>Put option</title>
-        <description>&lt;p&gt;A put option is the right to sell the underlying security at a specified time in
-the future for a defined price. On the other hand, the short side must accept
-delivery and pay the price.&lt;/p&gt;
-
-&lt;p&gt;The payout diagram of a short put:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../images/option_put.png&quot; alt=&quot;put option&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>/Hedge-o-Mat/instruments/put-option.html</link>
-        <guid isPermaLink="true">/Hedge-o-Mat/instruments/put-option.html</guid>
-        
-        
-        <category>instruments</category>
-        
-      </item>
-    
-      <item>
-        <title>Option</title>
-        <description>&lt;p&gt;An option gives the holder of the contract the right to buy/sell an underlying
-asset for a fixed price at a defined time in the futurue (termed European style
-options).&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;it&#39;s a right and not an obligation (much like an insurance)&lt;/li&gt;
-&lt;li&gt;execution prior to defined date: American style option&lt;/li&gt;
-&lt;li&gt;a call option is the right to buy&lt;/li&gt;
-&lt;li&gt;a put option is the right to sell&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The payout  of a &lt;strong&gt;call&lt;/strong&gt; option: &lt;script type=&quot;math/tex&quot;&gt;C_T = max(0, S_T - X)&lt;/script&gt;. (S
-is stock price at exerc. time, X is pre-defined strike price). A holder of the
-option will only exercise his right if the price of the underlying asset is
-&lt;span style=&quot;text-decoration: underline&quot;&gt;above&lt;/span&gt; the strike price at time
-T.&lt;/p&gt;
-
-&lt;p&gt;The payout of a &lt;strong&gt;put&lt;/strong&gt; option: &lt;script type=&quot;math/tex&quot;&gt;C_T = max(0, X - S_T)&lt;/script&gt;. A
-holder of the  option will only exercise his right if the price of the
-underlying asset  is &lt;span style=&quot;text-decoration: underline&quot;&gt;below&lt;/span&gt; the
-strike price at time T.&lt;/p&gt;
-
-&lt;p&gt;The premium of an option is usually calculated using the &lt;a href=&quot;../methods/black-scholes-merton.html&quot;&gt;Black-Scholes-Merton formula&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;There also exist a number of “exotic” options: …&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Payout diagrams&lt;/strong&gt;: at the maturity of the option, depending on
-the spot price of the underlying, shown on the x-axis, we will realize a profit
-or a loss, shown on the y-axis.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../images/option_call.png&quot; alt=&quot;call option&quot; /&gt;
-&lt;img src=&quot;../images/option_put.png&quot; alt=&quot;put option&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>/Hedge-o-Mat/instruments/option.html</link>
-        <guid isPermaLink="true">/Hedge-o-Mat/instruments/option.html</guid>
-        
-        
-        <category>instruments</category>
         
       </item>
     
