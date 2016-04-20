@@ -11,4 +11,6 @@ The following posts include an interactive calculator:
 * [future value](../methods/future-value.html)
 * [saving time](../methods/saving-time.html)
 
+Source code is located on
+[GitHub](https://github.com/CodiePP/Hedge-o-Mat/tree/master/hs/src/calculators).
 
