@@ -74,21 +74,21 @@
   </header>
 
   <article class="post-content">
-  <p><code>datenum()</code> is very slow in Matlab, so I tried to write my own function which is
+  <p><code class="highlighter-rouge">datenum()</code> is very slow in Matlab, so I tried to write my own function which is
 much faster:</p>
 
-<div class="highlight"><pre><code class="language-octave" data-lang="octave"><span class="k">function</span><span class="w"> </span>dtnum <span class="p">=</span><span class="w"> </span><span class="nf">date2num</span><span class="p">(</span>sdt0<span class="p">)</span><span class="w"></span>
-<span class="c">% Matlab/Octave: fast numeric conversion </span>
-<span class="c">% of string from format &#39;yyyy-mm-dd&#39; to numerical date</span>
-  <span class="n">sdt</span> <span class="p">=</span> <span class="n">sdt0</span> <span class="o">-</span> <span class="p">[</span><span class="s">&#39;0&#39;</span><span class="p">];</span>
-  <span class="n">y</span> <span class="p">=</span> <span class="n">sdt</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">+</span> <span class="n">sdt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">sdt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">sdt</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-  <span class="n">m</span> <span class="p">=</span> <span class="n">sdt</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">sdt</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
-  <span class="n">d</span> <span class="p">=</span> <span class="n">sdt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">sdt</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-  <span class="n">dtnum</span> <span class="p">=</span> <span class="nb">datenum</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
-<span class="k">end</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-octave" data-lang="octave">function dtnum = date2num(sdt0)
+% Matlab/Octave: fast numeric conversion 
+% of string from format 'yyyy-mm-dd' to numerical date
+  sdt = sdt0 - ['0'];
+  y = sdt(1) * 1000 + sdt(2) * 100 + sdt(3) * 10 + sdt(4);
+  m = sdt(6) * 10 + sdt(7);
+  d = sdt(9) * 10 + sdt(10);
+  dtnum = datenum(y,m,d);
+end</code></pre></figure>
 
 <p>in Octave on my laptop computer it only took 2.3 seconds to convert a date a
-thouthand times with <code>date2num()</code>. The original function datenum() took
+thouthand times with <code class="highlighter-rouge">date2num()</code>. The original function datenum() took
 over 72 seconds. Thus, we have achieved a 31x speed improvement!</p>
 
 

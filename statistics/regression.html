@@ -86,12 +86,12 @@ r_{21} \: r_{22} \ldots r_{2n} \\ \vdots
 \end{array} \right]^T \left[ \begin{array}{cc} 1 \: r_{X1} \\ 1 \: r_{X2}
 \\ \vdots \\ 1 \: r_{Xk} \end{array} \right]</script>
 
-<p>In <code>Matlab</code>/<code>Octave</code>:</p>
+<p>In <code class="highlighter-rouge">Matlab</code>/<code class="highlighter-rouge">Octave</code>:</p>
 
-<div class="highlight"><pre><code class="language-octave" data-lang="octave"><span class="p">[</span><span class="n">alpha</span><span class="p">;</span><span class="nb">beta</span><span class="p">]=[</span><span class="mi">1</span><span class="p">,</span> <span class="n">r_X</span><span class="p">]</span>  <span class="o">\</span> <span class="n">r_kn</span><span class="p">;</span>
-<span class="n">residuals</span> <span class="p">=</span> <span class="n">r_kn</span> <span class="o">-</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="n">r_X</span><span class="p">]</span><span class="o">*</span><span class="p">[</span><span class="n">alpha</span><span class="p">;</span><span class="nb">beta</span><span class="p">]);</span>
-<span class="n">sigma_res</span> <span class="p">=</span> <span class="nb">std</span><span class="p">(</span><span class="n">residuals</span><span class="p">);</span>
-<span class="n">alpha_adj</span> <span class="p">=</span> <span class="n">alpha</span> <span class="o">./</span> <span class="n">sigma_res</span><span class="p">;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-octave" data-lang="octave">[alpha;beta]=[1, r_X]  \ r_kn;
+residuals = r_kn - ([1,r_X]*[alpha;beta]);
+sigma_res = std(residuals);
+alpha_adj = alpha ./ sigma_res;</code></pre></figure>
 
 <p>Some wordings:</p>
 

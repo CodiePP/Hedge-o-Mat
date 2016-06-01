@@ -77,8 +77,8 @@
   <p>This technique is used in situations where we want to reduce the dimensionality
 of the data to be analysed. By definition a PCA transforms the input variables
 (might be highly multicollinear) into independent linear combinations that are
-<code>orthogonal</code>.
-We can restate the problem as a search for <code>eigenvalues</code>/<code>eigenvectors</code>:</p>
+<code class="highlighter-rouge">orthogonal</code>.
+We can restate the problem as a search for <code class="highlighter-rouge">eigenvalues</code>/<code class="highlighter-rouge">eigenvectors</code>:</p>
 
 <script type="math/tex; mode=display">\Lambda = \Gamma^T \Sigma \Gamma</script>
 
@@ -95,27 +95,27 @@ propotion of total variance of the sample is explained by them.</p>
 
 <p>In Matlab/Octave:</p>
 
-<div class="highlight"><pre><code class="language-octave" data-lang="octave"><span class="c">% transform input matrix: mat</span>
-<span class="p">[</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">]</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">mat</span><span class="p">);</span>
-<span class="n">sumCols</span> <span class="p">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">mat</span><span class="p">);</span>
-<span class="n">adjm</span> <span class="p">=</span> <span class="nb">nan</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span><span class="n">ncols</span><span class="p">);</span>
-<span class="k">for</span> <span class="n">j</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">ncols</span>
-  <span class="n">adjm</span><span class="p">(:,</span><span class="n">j</span><span class="p">)</span> <span class="p">=</span> <span class="n">mat</span><span class="p">(:,</span><span class="n">j</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">sumCols</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">/</span> <span class="n">nrows</span><span class="p">);</span>
-<span class="k">end</span>
+<figure class="highlight"><pre><code class="language-octave" data-lang="octave">% transform input matrix: mat
+[nrows, ncols] = size(mat);
+sumCols = sum(mat);
+adjm = nan(nrows,ncols);
+for j=1:ncols
+  adjm(:,j) = mat(:,j) - (sumCols(j) / nrows);
+end
 
-<span class="c">% covariance matrix</span>
-<span class="n">covm</span> <span class="p">=</span> <span class="nb">cov</span><span class="p">(</span><span class="n">adjm</span><span class="p">);</span>
-<span class="p">[</span><span class="n">eivec</span><span class="p">,</span> <span class="n">eival</span><span class="p">]</span> <span class="p">=</span> <span class="nb">eig</span><span class="p">(</span><span class="n">covm</span><span class="p">);</span>
-<span class="n">eival</span> <span class="p">=</span> <span class="nb">diag</span><span class="p">(</span><span class="n">eival</span><span class="p">);</span> <span class="c">% extract diagonal elements =&gt; eigenvalues</span>
+% covariance matrix
+covm = cov(adjm);
+[eivec, eival] = eig(covm);
+eival = diag(eival); % extract diagonal elements =&gt; eigenvalues
 
-<span class="p">[</span><span class="n">seival</span> <span class="n">si</span><span class="p">]</span> <span class="p">=</span> <span class="nb">sort</span><span class="p">(</span><span class="n">eival</span><span class="p">,</span> <span class="s">&#39;descend&#39;</span><span class="p">);</span> <span class="c">% sort descending, highest first</span>
+[seival si] = sort(eival, 'descend'); % sort descending, highest first
 
-<span class="n">seivec</span> <span class="p">=</span> <span class="n">eivec</span><span class="p">(:,</span><span class="n">si</span><span class="p">);</span> <span class="c">% sorted eigenvectors</span>
+seivec = eivec(:,si); % sorted eigenvectors
 
-<span class="c">% explanatory power of first eigenvalue/eigenvector</span>
-<span class="n">tev</span><span class="p">=</span><span class="n">seival</span> <span class="o">./</span> <span class="nb">sum</span><span class="p">(</span><span class="n">seival</span><span class="p">);</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;first eigenvector explains %.0f%% of total variance.\n&#39;</span><span class="p">,</span>
-<span class="n">tev</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">);</span></code></pre></div>
+% explanatory power of first eigenvalue/eigenvector
+tev=seival ./ sum(seival);
+fprintf(1, 'first eigenvector explains %.0f%% of total variance.\n',
+tev(1)*100);</code></pre></figure>
 
 
   </article>

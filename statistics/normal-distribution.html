@@ -92,16 +92,24 @@ probability <script type="math/tex">P(Z{>}z) = 5{\%}</script>  when <script type
 
 <p><img src="../images/npdf.png" alt="Normal probability distribution" /></p>
 
-<p>Code to reproduce this plot in <code>octave</code>:</p>
+<p>Code to reproduce this plot in <code class="highlighter-rouge">octave</code>:</p>
 
-<div class="highlight"><pre><code class="language-octave" data-lang="octave"><span class="lineno">1 </span><span class="n">p</span><span class="p">=</span><span class="nb">normpdf</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="mf">0.2</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="lineno">2 </span><span class="nb">plot</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
-<span class="lineno">3 </span><span class="nb">title</span><span class="p">(</span><span class="s">&quot;Normal distribution&quot;</span><span class="p">);</span>
-<span class="lineno">4 </span><span class="n">xt2</span><span class="p">=[</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">32</span><span class="p">];</span>
-<span class="lineno">5 </span><span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XTick&#39;</span><span class="p">,</span><span class="n">xt2</span><span class="p">);</span>
-<span class="lineno">6 </span><span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XTicklabel&#39;</span><span class="p">,{</span><span class="s">&#39;-3.2&#39;</span><span class="p">,</span><span class="s">&#39;-1.6&#39;</span><span class="p">,</span><span class="s">&#39;0&#39;</span><span class="p">,</span><span class="s">&#39;1.6&#39;</span><span class="p">,</span><span class="s">&#39;3.2&#39;</span><span class="p">});</span>
-<span class="lineno">7 </span><span class="nb">print</span><span class="p">(</span><span class="s">&#39;npdf.ps&#39;</span><span class="p">,</span><span class="s">&#39;-dpsc2&#39;</span><span class="p">);</span>
-<span class="lineno">8 </span><span class="c"># convert npdf.ps -trim -resize 70% npdf.png</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-octave" data-lang="octave"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre>p=normpdf([-3:0.2:3],0,1);
+plot(p);
+title("Normal distribution");
+xt2=[0,8,16,24,32];
+set(gca,'XTick',xt2);
+set(gca,'XTicklabel',{'-3.2','-1.6','0','1.6','3.2'});
+print('npdf.ps','-dpsc2');
+# convert npdf.ps -trim -resize 70% npdf.png<span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
   </article>

@@ -83,7 +83,7 @@ should be of the same price. As price we mean the implied volatility of the
 option if we solve the Black-Scholes-Merton formula for the volatility parameter
 given all other parameters (interest rate, time to maturity, market price, ..)
 known. This volatility is implied by the prices of the options and therefore
-called <code>implied volatility</code>.</p>
+called <code class="highlighter-rouge">implied volatility</code>.</p>
 
 <p>Under the non-arbitrage argument the prices of puts and calls should be the
 same. However, as we compare market prices of such options and solve the BSM
@@ -120,18 +120,18 @@ expensive or simply, investors afford more to protect the downside risk.</p>
 <p>We can draw the implied volatility against moneyness (i.e. <script type="math/tex">K/S</script>) and time
 to maturity.</p>
 
-<div class="highlight"><pre><code class="language-octave" data-lang="octave"><span class="n">ivsurf</span> <span class="p">=</span> <span class="p">[</span>
-<span class="mf">14.2</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">13.1</span><span class="p">,</span> <span class="mf">14.5</span><span class="p">;</span>
-<span class="mf">14.0</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">13.1</span><span class="p">,</span> <span class="mf">14.2</span><span class="p">;</span>
-<span class="mf">14.1</span><span class="p">,</span> <span class="mf">13.3</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mf">13.4</span><span class="p">,</span> <span class="mf">14.3</span><span class="p">;</span>
-<span class="mf">14.7</span><span class="p">,</span> <span class="mf">14.0</span><span class="p">,</span> <span class="mf">13.5</span><span class="p">,</span> <span class="mf">14.0</span><span class="p">,</span> <span class="mf">14.8</span><span class="p">;</span>
-<span class="mf">15.0</span><span class="p">,</span> <span class="mf">14.4</span><span class="p">,</span> <span class="mf">14.0</span><span class="p">,</span> <span class="mf">14.5</span><span class="p">,</span> <span class="mf">15.1</span><span class="p">;</span>
-<span class="mf">14.8</span><span class="p">,</span> <span class="mf">14.6</span><span class="p">,</span> <span class="mf">14.4</span><span class="p">,</span> <span class="mf">14.7</span><span class="p">,</span> <span class="mf">15.0</span> <span class="p">];</span>
-<span class="nb">surf</span><span class="p">(</span><span class="n">ivsurf</span><span class="p">);</span>
-<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span> <span class="s">&#39;XTickLabel&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">]);</span>
-<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span> <span class="s">&#39;YTickLabel&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;1m&#39;</span><span class="p">;</span> <span class="s">&#39;3m&#39;</span><span class="p">;</span> <span class="s">&#39;6m&#39;</span><span class="p">;</span> <span class="s">&#39;1y&#39;</span><span class="p">;</span> <span class="s">&#39;2y&#39;</span><span class="p">;</span> <span class="s">&#39;5y&#39;</span><span class="p">]);</span>
-<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span> <span class="s">&quot;view&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">48</span><span class="p">,</span> <span class="mi">44</span><span class="p">]);</span>
-<span class="nb">print</span><span class="p">(</span><span class="s">&#39;volasurf_ch18.ps&#39;</span><span class="p">,</span><span class="s">&#39;-dpsc2&#39;</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-octave" data-lang="octave">ivsurf = [
+14.2, 13.0, 12.0, 13.1, 14.5;
+14.0, 13.0, 12.0, 13.1, 14.2;
+14.1, 13.3, 12.5, 13.4, 14.3;
+14.7, 14.0, 13.5, 14.0, 14.8;
+15.0, 14.4, 14.0, 14.5, 15.1;
+14.8, 14.6, 14.4, 14.7, 15.0 ];
+surf(ivsurf);
+set(gca, 'XTickLabel', [0.9, 0.95, 1, 1.05, 1.1]);
+set(gca, 'YTickLabel', ['1m'; '3m'; '6m'; '1y'; '2y'; '5y']);
+set(gca, "view", [48, 44]);
+print('volasurf_ch18.ps','-dpsc2');</code></pre></figure>
 
 <p><img src="../images/volasurf_ch18.png" alt="Volatility surface" /></p>
 
