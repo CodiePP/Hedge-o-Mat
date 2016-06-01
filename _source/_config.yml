@@ -15,7 +15,7 @@ source: .
 destination: ../../Hedge-o-Mat.pages/
 
 # build index
-#lsi: true
+lsi: false
 
 # permalink as /Hedge-o-Mat/:categories/:title.html
 permalink: none

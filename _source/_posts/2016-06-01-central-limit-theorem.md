@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Central limit theorem"
-date:   2016-03-29 22:44:01
+date:   2016-06-01 22:44:01
 categories: methods
 ---
 
