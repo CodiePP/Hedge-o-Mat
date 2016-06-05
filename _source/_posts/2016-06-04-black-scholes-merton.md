@@ -7,7 +7,7 @@ categories: methods
 
 This formula was developped independently by Black and Scholes, and by Merton in
 1980/81.
-They received the Nobel prize for this "discovery" of such an important formula
+They received the Nobel prize in 1997 for this "discovery" of such an important formula
 to prize [options](../instruments/options.html) as financial instruments.
 
 The formula depends on:
