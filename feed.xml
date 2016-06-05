@@ -70,9 +70,63 @@
     <description>understanding and managing financial risks.</description>
     <link>/Hedge-o-Mat/</link>
     <atom:link href="/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 02 Jun 2016 01:12:16 +0200</pubDate>
-    <lastBuildDate>Thu, 02 Jun 2016 01:12:16 +0200</lastBuildDate>
+    <pubDate>Sun, 05 Jun 2016 21:16:08 +0200</pubDate>
+    <lastBuildDate>Sun, 05 Jun 2016 21:16:08 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Black-Scholes-Merton formula</title>
+        <description>&lt;p&gt;This formula was developped independently by Black and Scholes, and by Merton in
+1980/81.
+They received the Nobel prize for this “discovery” of such an important formula
+to prize &lt;a href=&quot;../instruments/options.html&quot;&gt;options&lt;/a&gt; as financial instruments.&lt;/p&gt;
+
+&lt;p&gt;The formula depends on:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;S&lt;/em&gt;: the spot price of the underlying asset&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;K&lt;/em&gt;: the strike price to buy/sell at maturity date&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;T&lt;/em&gt;: the time to maturity (in years)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;r&lt;/em&gt;: the interest rate (now till maturity)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;q&lt;/em&gt;: the dividend yield&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;σ&lt;/em&gt;: the volatility of the underlying (or implied volatility)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We first calculate two terms that are subsequently used in simplified formulas:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;d_1=\frac{log(S/K) + (r -q +\frac{1}{2}\sigma^2)T}{\sigma\sqrt{T}}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;d_2=\frac{log(S/K) + (r -q -\frac{1}{2}\sigma^2)T}{\sigma\sqrt{T}}&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Value&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;V=Se^{-qT}N(d_1) - Ke^{-rT}N(d_2)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Delta&lt;/strong&gt;: &lt;script type=&quot;math/tex&quot;&gt;\frac{\partial V}{\partial S} = e^{-qT}N(d_1)&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;calculator&quot;&gt;calculator&lt;/h2&gt;
+
+&lt;iframe width=&quot;420&quot; height=&quot;240&quot; src=&quot;/Hedge-o-Mat/static/bsm.html&quot;&gt;&lt;/iframe&gt;
+
+</description>
+        <pubDate>Sun, 05 Jun 2016 00:44:01 +0200</pubDate>
+        <link>/Hedge-o-Mat/methods/black-scholes-merton.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/methods/black-scholes-merton.html</guid>
+        
+        
+        <category>methods</category>
+        
+      </item>
     
       <item>
         <title>Central limit theorem</title>
@@ -268,32 +322,6 @@ out-of-the-money strikes.&lt;/p&gt;
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
         <link>/Hedge-o-Mat/instruments/strangle.html</link>
         <guid isPermaLink="true">/Hedge-o-Mat/instruments/strangle.html</guid>
-        
-        
-        <category>instruments</category>
-        
-      </item>
-    
-      <item>
-        <title>Straddle</title>
-        <description>&lt;p&gt;Straddles are combinations of one call and one put with the same strike price
-and expiration date. This strategy costs a significant upfront investment (the
-premia for the call and the put), but could end up in profit if the underlying’s
-spot price at expiration is above or below the strike price. One might choose
-this type of option trading strategy before surprising announcements. But the
-counterparty might already have priced the “big move” in the premium (higher
-implied volatility) of the options.
-If the same strategy is shortened, i.e. short put and short call, the payoff is
-inverted: limited profit, but unlimited loss in case of a big move.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Payoff straddle&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../images/straddle.png&quot; alt=&quot;straddle&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>/Hedge-o-Mat/instruments/straddle.html</link>
-        <guid isPermaLink="true">/Hedge-o-Mat/instruments/straddle.html</guid>
         
         
         <category>instruments</category>
