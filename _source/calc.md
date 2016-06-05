@@ -10,6 +10,7 @@ The following posts include an interactive calculator:
 * [present value](../methods/present-value.html)
 * [future value](../methods/future-value.html)
 * [saving time](../methods/saving-time.html)
+* [option price](../methods/black-scholes-merton.html)
 
 Source code is located on
 [GitHub](https://github.com/CodiePP/Hedge-o-Mat/tree/master/hs/src/calculators).

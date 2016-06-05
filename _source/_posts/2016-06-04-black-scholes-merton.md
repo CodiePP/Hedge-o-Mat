@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Black-Scholes-Merton formula"
-date:   2016-03-29 22:44:01
+date:   2016-06-04 22:44:01
 categories: methods
 ---
 
@@ -33,4 +33,8 @@ $$ d_2=\frac{log(S/K) + (r -q -\frac{1}{2}\sigma^2)T}{\sigma\sqrt{T}} $$
 **Value** $$ V=Se^{-qT}N(d_1) - Ke^{-rT}N(d_2) $$
 
 **Delta**: $$ \frac{\partial V}{\partial S} = e^{-qT}N(d_1) $$
+
+## calculator
+
+{% calculator bsm 420 240 %}
 
