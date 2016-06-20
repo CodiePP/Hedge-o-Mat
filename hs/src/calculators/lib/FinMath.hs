@@ -26,33 +26,13 @@ erf z = if z >= 0 then
 erfc z = 1.0 - (erf z)
 
 
+cndfz :: Double -> Double
+cndfz z = cndf z 0.0 1.0
+
 cndf :: Double -> Double -> Double -> Double
 cndf x mu sigma = 
     0.5 * erfc((-z) * invsqrt2)
     where
       z = (x - mu) / sigma
       invsqrt2 = 1.0 / 1.4142135623730950488017
-
-
-priceCall :: Double -> Double -> Double -> Double -> Double -> Double
-priceCall s k r tau sigma =
-    s * (cndf d1 0.0 1.0) - k*exp((-r)*tau) * (cndf d2 0.0 1.0)
-
-    where
-        m = k / s
-        sigma2div2 = sigma*sigma / 2.0
-        iFun = \m' s' inner r' t' ->  ((-(log m')) + t' * (r' + inner)) / s' / (sqrt t')
-        d1 = iFun m sigma  sigma2div2 r tau
-        d2 = iFun m sigma (-sigma2div2) r tau
-
-pricePut :: Double -> Double -> Double -> Double -> Double -> Double
-pricePut s k r tau sigma =
-    k*exp((-r)*tau) * (cndf (-d2) 0.0 1.0) - s * (cndf (-d1) 0.0 1.0)
-
-    where
-        m = k / s
-        sigma2div2 = sigma*sigma / 2.0
-        iFun = \m' s' inner r' t' ->  ((-(log m')) + t' * (r' + inner)) / s' / (sqrt t')
-        d1 = iFun m sigma  sigma2div2 r tau
-        d2 = iFun m sigma (-sigma2div2) r tau
 
