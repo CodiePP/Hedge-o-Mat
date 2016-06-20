@@ -36,5 +36,5 @@ $$ d_2=\frac{log(S/K) + (r -q -\frac{1}{2}\sigma^2)T}{\sigma\sqrt{T}} $$
 
 ## calculator
 
-{% calculator bsm 420 240 %}
+{% calculator bsm 680 380 %}
 
