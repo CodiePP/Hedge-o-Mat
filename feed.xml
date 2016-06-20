@@ -70,8 +70,8 @@
     <description>understanding and managing financial risks.</description>
     <link>/Hedge-o-Mat/</link>
     <atom:link href="/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 20 Jun 2016 22:25:34 +0200</pubDate>
-    <lastBuildDate>Mon, 20 Jun 2016 22:25:34 +0200</lastBuildDate>
+    <pubDate>Mon, 20 Jun 2016 22:29:36 +0200</pubDate>
+    <lastBuildDate>Mon, 20 Jun 2016 22:29:36 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -116,7 +116,7 @@ to prize &lt;a href=&quot;../instruments/options.html&quot;&gt;options&lt;/a&gt;
 
 &lt;h2 id=&quot;calculator&quot;&gt;calculator&lt;/h2&gt;
 
-&lt;iframe width=&quot;620&quot; height=&quot;360&quot; src=&quot;/Hedge-o-Mat/static/bsm.html&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;680&quot; height=&quot;380&quot; src=&quot;/Hedge-o-Mat/static/bsm.html&quot;&gt;&lt;/iframe&gt;
 
 </description>
         <pubDate>Sun, 05 Jun 2016 00:44:01 +0200</pubDate>
