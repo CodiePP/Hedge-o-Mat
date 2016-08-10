@@ -70,9 +70,61 @@
     <description>understanding and managing financial risks.</description>
     <link>/Hedge-o-Mat/</link>
     <atom:link href="/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 11 Aug 2016 01:15:45 +0200</pubDate>
-    <lastBuildDate>Thu, 11 Aug 2016 01:15:45 +0200</lastBuildDate>
+    <pubDate>Thu, 11 Aug 2016 01:39:21 +0200</pubDate>
+    <lastBuildDate>Thu, 11 Aug 2016 01:39:21 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Wilmott Introduces Quantitative Finance</title>
+        <description>&lt;p&gt;Wilmott, P.
+&lt;strong&gt;_Wilmott Introduces Quantitative Finance&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Wiley, 2nd ed., &lt;strong&gt;2009&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;content&quot;&gt;Content&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Products and Markets&lt;/li&gt;
+  &lt;li&gt;Derivatives&lt;/li&gt;
+  &lt;li&gt;The Binomial Model&lt;/li&gt;
+  &lt;li&gt;The Random Behavior of Assets&lt;/li&gt;
+  &lt;li&gt;Elementary Stochastic Calculus&lt;/li&gt;
+  &lt;li&gt;The Black-Scholes Model&lt;/li&gt;
+  &lt;li&gt;Partial Differential Equations&lt;/li&gt;
+  &lt;li&gt;The Black-Scholes Formulae and the “Greeks”&lt;/li&gt;
+  &lt;li&gt;Overview of Volatility Modeling&lt;/li&gt;
+  &lt;li&gt;How to Delta Hedge&lt;/li&gt;
+  &lt;li&gt;An Introduction to Exotic and Path-dependent Options&lt;/li&gt;
+  &lt;li&gt;Multi-asset Options&lt;/li&gt;
+  &lt;li&gt;Barrier Options&lt;/li&gt;
+  &lt;li&gt;Fixed-Income Product and Analysis: Yield, Duration, Convexity&lt;/li&gt;
+  &lt;li&gt;Swaps&lt;/li&gt;
+  &lt;li&gt;One-factor Interest Rate Modeling&lt;/li&gt;
+  &lt;li&gt;Yield Curve Fitting&lt;/li&gt;
+  &lt;li&gt;Interest Rate Derivatives&lt;/li&gt;
+  &lt;li&gt;The Heath, Jarrow &amp;amp; Morton and Brace, Gatarek &amp;amp; Musiela Models&lt;/li&gt;
+  &lt;li&gt;Investment Lessons from Blackjack and Gambling&lt;/li&gt;
+  &lt;li&gt;Portfolio Management&lt;/li&gt;
+  &lt;li&gt;Value at Risk&lt;/li&gt;
+  &lt;li&gt;Credit Risk&lt;/li&gt;
+  &lt;li&gt;RiskMetrics and CreditMetrics&lt;/li&gt;
+  &lt;li&gt;CrashMetrics&lt;/li&gt;
+  &lt;li&gt;Derivativs Ups&lt;/li&gt;
+  &lt;li&gt;Overview of Numerical Methods&lt;/li&gt;
+  &lt;li&gt;Finite-difference Methods for One-factor Models&lt;/li&gt;
+  &lt;li&gt;Monte Carlo Simulation&lt;/li&gt;
+  &lt;li&gt;Numerical Integration&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Thu, 11 Aug 2016 00:44:01 +0200</pubDate>
+        <link>/Hedge-o-Mat/books/wilmott_introduces_quantitative_fiannce.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/books/wilmott_introduces_quantitative_fiannce.html</guid>
+        
+        
+        <category>books</category>
+        
+      </item>
     
       <item>
         <title>McNeil, Frey, Embrechts: Quantitative Risk Management</title>
@@ -309,26 +361,6 @@ earn interest.&lt;/p&gt;
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
         <link>/Hedge-o-Mat/measure/vega.html</link>
         <guid isPermaLink="true">/Hedge-o-Mat/measure/vega.html</guid>
-        
-        
-        <category>measure</category>
-        
-      </item>
-    
-      <item>
-        <title>Theta</title>
-        <description>&lt;p&gt;Theta reduces an option’s price every day until the expiration date is reached.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial V}{\partial S} = -\frac{\sigma S e^{-qT}N&#39;(d1)}{2\sqrt{T}} +
-qSN(d1)e^{-qT} - rKe^{-rT}N(d2)&lt;/script&gt;
-
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;N&#39;(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;(see &lt;a href=&quot;../methods/black-scholes-merton.html&quot;&gt;Black-Scholes-Merton formula&lt;/a&gt;)&lt;/p&gt;
-</description>
-        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>/Hedge-o-Mat/measure/theta.html</link>
-        <guid isPermaLink="true">/Hedge-o-Mat/measure/theta.html</guid>
         
         
         <category>measure</category>
