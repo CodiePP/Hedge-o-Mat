@@ -70,8 +70,8 @@
     <description>understanding and managing financial risks.</description>
     <link>/Hedge-o-Mat/</link>
     <atom:link href="/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 11 Aug 2016 00:59:24 +0200</pubDate>
-    <lastBuildDate>Thu, 11 Aug 2016 00:59:24 +0200</lastBuildDate>
+    <pubDate>Thu, 11 Aug 2016 01:13:29 +0200</pubDate>
+    <lastBuildDate>Thu, 11 Aug 2016 01:13:29 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -99,6 +99,41 @@ Princeton University Press, &lt;strong&gt;2005&lt;/strong&gt;&lt;/p&gt;
         <pubDate>Thu, 11 Aug 2016 00:44:01 +0200</pubDate>
         <link>/Hedge-o-Mat/books/quantitative-risk-management.html</link>
         <guid isPermaLink="true">/Hedge-o-Mat/books/quantitative-risk-management.html</guid>
+        
+        
+        <category>books</category>
+        
+      </item>
+    
+      <item>
+        <title>Brooks: Introductory Econometrics for Finance</title>
+        <description>&lt;p&gt;Brooks, C.
+&lt;strong&gt;_Introductory Econometrics for Finance&lt;/strong&gt;: concepts, techniques, and tools
+Cambridge University Press, 2nd ed., &lt;strong&gt;2008&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;content&quot;&gt;Content&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Introduction&lt;/li&gt;
+  &lt;li&gt;A brief overfiew of the classical linear regression model&lt;/li&gt;
+  &lt;li&gt;Further development and analysis of the classical linear regression model&lt;/li&gt;
+  &lt;li&gt;Classical linear regression model assumptions and diagnostic tests&lt;/li&gt;
+  &lt;li&gt;Univariate time series modelling and forecasting&lt;/li&gt;
+  &lt;li&gt;Multivariate models&lt;/li&gt;
+  &lt;li&gt;Modelling long-run relationships in finance&lt;/li&gt;
+  &lt;li&gt;Modelling volatility and correlation&lt;/li&gt;
+  &lt;li&gt;Switching models&lt;/li&gt;
+  &lt;li&gt;Panel data&lt;/li&gt;
+  &lt;li&gt;Limited dependent variable models&lt;/li&gt;
+  &lt;li&gt;Simulation methods&lt;/li&gt;
+  &lt;li&gt;Conducting empirical research or doing a project or dissertation in finance&lt;/li&gt;
+  &lt;li&gt;Recent and future developments in the modelling of financial time series&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Thu, 11 Aug 2016 00:44:01 +0200</pubDate>
+        <link>/Hedge-o-Mat/books/introductory_econometrics.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/books/introductory_econometrics.html</guid>
         
         
         <category>books</category>
@@ -296,46 +331,6 @@ qSN(d1)e^{-qT} - rKe^{-rT}N(d2)&lt;/script&gt;
         
         
         <category>measure</category>
-        
-      </item>
-    
-      <item>
-        <title>Swap</title>
-        <description>&lt;p&gt;Exchange of cash flows from fixed interest for floating interest.
-Several types: interest rate swap, currency swap, equity swap, volatility swap,
-commodity swap, …&lt;/p&gt;
-
-&lt;p&gt;Example of a plain vanilla interest rate swap using bonds:
-discount fixed rate cash flows, discount floating rate cash flows and take
-difference.
-fixed rate=6%,semiannually, floating rates=(5.4%,5.6%,5.8%), 1M notional, every
-6 months, for 1.5 years.
-&lt;script type=&quot;math/tex&quot;&gt;B_{fixed} = 30&#39;000 e^{-(0.054*0.5)} + 30&#39;000 e^{-(0.056*1)} + 1&#39;030&#39;000
-e^{-(0.058*1.5)} = 1&#39;001&#39;744.42&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;B_{floating} = 1&#39;000&#39;000 * (1 + \frac{0.05}{2}) e^{(-0.054*0.5)} = 997&#39;695.27&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;V_{swap} = (B_{fixed} - B_{floating}) = 4&#39;049.15&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Example of currency swap valuation using forwards:
-paid rate for USD: 5%, received rate for GBP: 6%
-GBPUSD = 1.50, interest rates in USD: 2%, GBP: 4%, time: 2 years, annually paid.&lt;/p&gt;
-&lt;table&gt;
-&lt;tr&gt;&lt;th&gt;Time&lt;/th&gt;&lt;th&gt;USD CF&lt;/th&gt;&lt;th&gt;GBP CF&lt;/th&gt;&lt;th&gt;forward rate&lt;/th&gt;&lt;th&gt;$ per
-GBP&lt;/th&gt;&lt;th&gt;Net CF&lt;/th&gt;&lt;th&gt;PV of Net CF&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;7.5&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;1.47&lt;/td&gt;&lt;td&gt;8.82&lt;/td&gt;&lt;td&gt;-1.32&lt;/td&gt;&lt;td&gt;-1.294&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;7.5&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;1.441&lt;/td&gt;&lt;td&gt;8.646&lt;/td&gt;&lt;td&gt;-1.146&lt;/td&gt;&lt;td&gt;-1.101&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;150&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;1.441&lt;/td&gt;&lt;td&gt;144.1&lt;/td&gt;&lt;td&gt;5.9&lt;/td&gt;&lt;td&gt;5.669&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td align=&quot;left&quot; colspan=&quot;6&quot;&gt;Total&lt;/td&gt;&lt;td&gt;3.274&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Forward rate calculation: &lt;script type=&quot;math/tex&quot;&gt;F_1 = 1.5 e^{(2{\%}-4{\%})*T)}&lt;/script&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>/Hedge-o-Mat/instruments/swap.html</link>
-        <guid isPermaLink="true">/Hedge-o-Mat/instruments/swap.html</guid>
-        
-        
-        <category>instruments</category>
         
       </item>
     
