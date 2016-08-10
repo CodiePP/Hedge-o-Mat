@@ -70,8 +70,8 @@
     <description>understanding and managing financial risks.</description>
     <link>/Hedge-o-Mat/</link>
     <atom:link href="/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 11 Aug 2016 00:53:10 +0200</pubDate>
-    <lastBuildDate>Thu, 11 Aug 2016 00:53:10 +0200</lastBuildDate>
+    <pubDate>Thu, 11 Aug 2016 00:59:24 +0200</pubDate>
+    <lastBuildDate>Thu, 11 Aug 2016 00:59:24 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -80,18 +80,20 @@
 &lt;strong&gt;&lt;em&gt;Quantitative Risk Management&lt;/em&gt;&lt;/strong&gt;: concepts, techniques, and tools
 Princeton University Press, &lt;strong&gt;2005&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Content&lt;/p&gt;
+&lt;h3 id=&quot;content&quot;&gt;Content&lt;/h3&gt;
 
-&lt;p&gt;1 Risk in Perspective
- 2 Basic Concepts in Risk Management
- 3 Multivariate Models
- 4 Financial Time Series
- 5 Copulas and Dependence
- 6 Aggregate Risk
- 7 Extreme Value Theory
- 8 Credit Risk Management
- 9 Dynamic Credit Risk Models
-10 Operational Risk and Insurance Analytics&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Risk in Perspective&lt;/li&gt;
+  &lt;li&gt;Basic Concepts in Risk Management&lt;/li&gt;
+  &lt;li&gt;Multivariate Models&lt;/li&gt;
+  &lt;li&gt;Financial Time Series&lt;/li&gt;
+  &lt;li&gt;Copulas and Dependence&lt;/li&gt;
+  &lt;li&gt;Aggregate Risk&lt;/li&gt;
+  &lt;li&gt;Extreme Value Theory&lt;/li&gt;
+  &lt;li&gt;Credit Risk Management&lt;/li&gt;
+  &lt;li&gt;Dynamic Credit Risk Models&lt;/li&gt;
+  &lt;li&gt;Operational Risk and Insurance Analytics&lt;/li&gt;
+&lt;/ol&gt;
 
 </description>
         <pubDate>Thu, 11 Aug 2016 00:44:01 +0200</pubDate>
