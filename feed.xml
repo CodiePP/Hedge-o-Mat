@@ -70,9 +70,38 @@
     <description>understanding and managing financial risks.</description>
     <link>/Hedge-o-Mat/</link>
     <atom:link href="/Hedge-o-Mat/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 20 Jun 2016 22:29:36 +0200</pubDate>
-    <lastBuildDate>Mon, 20 Jun 2016 22:29:36 +0200</lastBuildDate>
+    <pubDate>Thu, 11 Aug 2016 00:53:10 +0200</pubDate>
+    <lastBuildDate>Thu, 11 Aug 2016 00:53:10 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>McNeil, Frey, Embrechts: Quantitative Risk Management</title>
+        <description>&lt;p&gt;McNeil, A., Frey, R., Embrechts, P.
+&lt;strong&gt;&lt;em&gt;Quantitative Risk Management&lt;/em&gt;&lt;/strong&gt;: concepts, techniques, and tools
+Princeton University Press, &lt;strong&gt;2005&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Content&lt;/p&gt;
+
+&lt;p&gt;1 Risk in Perspective
+ 2 Basic Concepts in Risk Management
+ 3 Multivariate Models
+ 4 Financial Time Series
+ 5 Copulas and Dependence
+ 6 Aggregate Risk
+ 7 Extreme Value Theory
+ 8 Credit Risk Management
+ 9 Dynamic Credit Risk Models
+10 Operational Risk and Insurance Analytics&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 11 Aug 2016 00:44:01 +0200</pubDate>
+        <link>/Hedge-o-Mat/books/quantitative-risk-management.html</link>
+        <guid isPermaLink="true">/Hedge-o-Mat/books/quantitative-risk-management.html</guid>
+        
+        
+        <category>books</category>
+        
+      </item>
     
       <item>
         <title>Black-Scholes-Merton formula</title>
@@ -302,26 +331,6 @@ GBP&lt;/th&gt;&lt;th&gt;Net CF&lt;/th&gt;&lt;th&gt;PV of Net CF&lt;/th&gt;&lt;/t
         <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
         <link>/Hedge-o-Mat/instruments/swap.html</link>
         <guid isPermaLink="true">/Hedge-o-Mat/instruments/swap.html</guid>
-        
-        
-        <category>instruments</category>
-        
-      </item>
-    
-      <item>
-        <title>Strangle</title>
-        <description>&lt;p&gt;Similar to the &lt;a href=&quot;straddle.html&quot;&gt;straddle&lt;/a&gt;, with this
-option trading strategy an investor bets on large price move of the underlying.
-It is cheaper than a straddle because we buy the put and the call with different
-out-of-the-money strikes.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Payoff strangle&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../images/strangle.png&quot; alt=&quot;strangle&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 31 Mar 2016 00:44:01 +0200</pubDate>
-        <link>/Hedge-o-Mat/instruments/strangle.html</link>
-        <guid isPermaLink="true">/Hedge-o-Mat/instruments/strangle.html</guid>
         
         
         <category>instruments</category>

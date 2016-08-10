@@ -1,22 +1,17 @@
-<!DOCTYPE html>
 <html>
   <head>
     <script type="text/javascript" src="/Hedge-o-Mat/js/calculators/bsm/calculator.js"></script>
   </head>
   <body>
-    <center style="margin-top: 1em; font-face: trebuchet; font-size: 12pt;">
-      price&nbsp;<input type="text" size="8" id="s" value="">
-      strike&nbsp;<input type="text" size="8" id="k" value="">
-      time(years)&nbsp;<input type="text" size="5" id="t" value="1.5">
-      rate&nbsp;<input type="text" size="4" id="r" value="2%">
-      vola(implied)&nbsp;<input type="text" size="5" id="sigma" value="12%">
+    <center style="margin-top: 10em; font-face: trebuchet; font-size: 12pt;">
+      price <input type="text" size="8" id="s" value="">
+      strike <input type="text" size="8" id="k" value=""><br>
+      time(years) <input type="text" size="5" id="t" value="1.5"><br>
+      rate <input type="text" size="4" id="r" value="2%">
+      vola(implied) <input type="text" size="5" id="sigma" value="12%">
       <b>=</b> <br>
-      <table>
-        <tr><td>call</td><td>put</td></tr>
-        <tr><td id="resultC">0</td>
-            <td id="resultP">0</td></tr>
-      </table>
-
+      call: <span id="resultC">0</span><br>
+      put: <span id="resultP">0</span>
     </center>
   </body>
 </html>
