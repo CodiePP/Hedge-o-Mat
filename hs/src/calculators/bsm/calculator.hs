@@ -31,7 +31,7 @@ calculator [s,k,r,t,sigma,resultC,resultP] = do
 
 
 prtOption s k r t sigma pc = 
-    (map (\(n,v) -> n ++ ": " ++ (prtdbl4 v) ++ "<br>") oval) >>= (++) ""
+    (map (\(n,v) -> n ++ ": " ++ (prtdbl4 v) ++ " ") oval) >>= (++) "<br>"
     where 
     mult = 1.0
     pvo = MyW.PVO { strike=(Px "CHF" k), price=(Px "CHF" s), rate=r, tdiff=t, volatility=sigma, ratio=mult, isput=pc }
